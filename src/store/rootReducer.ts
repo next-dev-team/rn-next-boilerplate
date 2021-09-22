@@ -10,6 +10,8 @@ import kittenSlice from './kittenSlice';
 const commonConfig = {
   version: 1,
   storage: AsyncStorage,
+  // There is an issue in the source code of redux-persist (default setTimeout does not cleaning)
+  timeout: undefined,
 };
 
 /**
@@ -18,7 +20,6 @@ const commonConfig = {
 const persistConfig = {
   ...commonConfig,
   key: 'root',
-  storage: AsyncStorage,
   whitelist: [],
 };
 

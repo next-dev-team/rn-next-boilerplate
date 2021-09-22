@@ -1,4 +1,18 @@
 {
-  "name": "Kitten",
-  "displayName": "Kitten"
+    "name": "Kitten",
+    "displayName": "Kitten",
+    "environments": {
+        "development": {
+            "API_URL": "https://ghibliapi.herokuapp.com",
+            "ENV": "development"
+        },
+        "staging": {
+            "API_URL": "https://ghibliapi.herokuapp.com",
+            "ENV": "staging"
+        },
+        "production": {
+            "API_URL": "https://ghibliapi.herokuapp.com",
+            "ENV": "production"
+        }
+    }
 }

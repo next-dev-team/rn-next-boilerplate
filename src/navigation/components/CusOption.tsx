@@ -22,7 +22,7 @@ const CusHeader = (props: CusHeaderProps) => {
       alignItems="center"
       paddingHorizontal="l"
       flexDirection="row"
-      mt={ifIphoneX('60', 'none')}
+      mt={ifIphoneX('50', 'none')}
     >
       <CusBox flex={1} flexDirection="row" alignItems="center" justifyContent="flex-start">
         {typeof left === 'boolean' && left && isCanGoBack() ? (

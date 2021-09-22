@@ -1,5 +1,8 @@
 import { ThemeProvider } from '@shopify/restyle';
-import React from 'react';
+import { Spinning } from 'components';
+import 'i18n/index';
+import React, { Suspense } from 'react';
+import 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -9,15 +12,17 @@ import AppNavigation from '../navigation/AppNavigation';
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+    <Suspense fallback={null}>
+      <SafeAreaProvider>
+        <Provider store={store}>
           <ThemeProvider theme={false ? darkTheme : lightTheme}>
-            <AppNavigation />
+            <PersistGate loading={<Spinning visible />} persistor={persistor}>
+              <AppNavigation />
+            </PersistGate>
           </ThemeProvider>
-        </PersistGate>
-      </Provider>
-    </SafeAreaProvider>
+        </Provider>
+      </SafeAreaProvider>
+    </Suspense>
   );
 };
 

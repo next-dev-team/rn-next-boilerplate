@@ -1,0 +1,7 @@
+
+icon-svg
+
+src/components/svg-icon
+*.svg
+.svg
+env.js
