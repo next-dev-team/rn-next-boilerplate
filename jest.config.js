@@ -7,6 +7,9 @@ module.exports = {
     './jest.setup.js',
     './__mocks__/@react-native-async-storage/async-storage.js',
   ],
+  globals: {
+    'ts-jest': {},
+  },
   clearMocks: true,
   moduleDirectories: ['node_modules', path.join(__dirname, 'src')],
   moduleNameMapper: {
@@ -16,4 +19,5 @@ module.exports = {
   },
   coveragePathIgnorePatterns: ['/.*\\.js$/', 'navigation', '  assetsTransformer.js'],
   collectCoverage: true,
+  cacheDirectory: '.jest/cache',
 };
