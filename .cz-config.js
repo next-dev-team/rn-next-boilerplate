@@ -4,39 +4,39 @@ module.exports = {
   types: [
     {
       value: 'feat',
-      name: '✨  feat:     新功能',
+      name: '✨ feat: new features',
     },
     {
       value: 'fix',
-      name: '🐛  fix:      修复bug',
+      name: '🐛 fix: fix bug',
     },
     {
       value: 'refactor',
-      name: '♻️  refactor: 代码重构（既不是新功能也不是改bug）',
+      name: '♻️ refactor: code refactoring (neither new features nor bug changes)',
     },
     {
       value: 'chore',
-      name: '🎫  chore:    修改流程配置',
+      name: '🎫 chore: modify process configuration',
     },
     {
       value: 'docs',
-      name: '📝  docs:     修改了文档',
+      name: '📝 docs: modified document',
     },
     {
       value: 'test',
-      name: '✅  test:     更新了测试用例',
+      name: '✅ test: updated test case',
     },
     {
       value: 'style',
-      name: '💄  style:    修改了样式文件',
+      name: '💄 style: modified style file',
     },
     {
       value: 'perf',
-      name: '⚡️  perf:     新能优化',
+      name: '⚡️ perf: new energy optimization',
     },
     {
       value: 'revert',
-      name: '⏪  revert:   回退提交',
+      name: '⏪ revert: revert to submit',
     },
   ],
   scopes: [],
@@ -44,12 +44,12 @@ module.exports = {
   allowBreakingChanges: ['feat', 'fix'],
   subjectLimit: 50,
   messages: {
-    type: '请选择你本次改动的修改类型',
-    customScope: '\n请明确本次改动的范围（可填）:',
-    subject: '简短描述本次改动:\n',
-    body: '详细描述本次改动 (可填). 使用 "|" 换行:\n',
-    breaking: '请列出任何 BREAKING CHANGES (可填):\n',
-    footer: '请列出本次改动关闭的ISSUE (可填). 比如: #31, #34:\n',
-    confirmCommit: '你确定提交本次改动吗?',
+    type: 'Please select the type of modification you made this time',
+    customScope: '\nPlease clarify the scope of this change (fillable):',
+    subject: 'Briefly describe this change:\n',
+    body: 'Describe this change in detail (fillable). Use "|" to wrap:\n',
+    breaking: 'Please list any BREAKING CHANGES (fillable):\n',
+    footer: 'Please list the ISSUE that is closed for this change (fillable). For example: #31, #34:\n',
+    confirmCommit: 'Are you sure to submit this change?',
   },
 };

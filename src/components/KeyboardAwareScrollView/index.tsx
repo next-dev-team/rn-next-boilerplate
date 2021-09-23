@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 interface KeyboardAwareScrollViewProps extends KeyboardAvoidingViewProps {
-  /** ScrollView 相关属性 */
+  /** ScrollView  Related attributes*/
   scrollViewProps?: ScrollViewProps;
 }
 

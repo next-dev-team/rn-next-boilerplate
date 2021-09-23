@@ -18,15 +18,27 @@
         "build:android": "yarn clean:android && cd android && ./gradlew assembleRelease && cd ..",
         "xcode": "xed ios",
         "test": "jest",
-        "commit": "git-cz",
-        "clean": "cl",
+        "clean": "react-native-clean-project",
         "test:coverage": "jest --coverage",
         "rename-app": "npx react-native-rename \"Name App\" -b com.nameapp",
         "env:dev": "node scripts/set-environment.js development",
         "env:stage": "node scripts/set-environment.js staging",
         "env:prod": "node scripts/set-environment.js production",
         "convert2Webp": "sh ./scripts/cwebp.sh",
-        "gen-svg": "npx svgicon-create"
+        "gen-svg": "npx svgicon-create",
+        "commit": "git-cz",
+        "tsc": "tsc -p tsconfig.json"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,ts,tsx}": [
+            "npm run eslint",
+            "npm run prettier"
+        ]
     },
     "dependencies": {
         "@react-native-async-storage/async-storage": "^1.15.8",
@@ -96,17 +108,6 @@
         "shelljs": "^0.8.4",
         "ts-jest": "^27.0.5",
         "typescript": "^4.4.3"
-    },
-    "config": {
-        "commitizen": {
-            "path": "node_modules/cz-customizable"
-        }
-    },
-    "lint-staged": {
-        "src/**/*.{js,ts,tsx}": [
-            "npm run eslint",
-            "npm run prettier"
-        ]
     },
     "jest": {
         "preset": "react-native",
