@@ -47,7 +47,7 @@ function GridView<T>(props: IGridViewProps<T>) {
         ListEmptyComponent={
           <>
             <CusBox justifyContent="center" alignItems="center">
-              <FastImage source={require('assets/images/emptyPhoto.png')} style={{ width: 100, height: 100 }} />
+              <FastImage source={require('assets/images/cambodia-flag.webp')} style={{ width: 100, height: 100 }} />
               <CusText color="fgSubdued">There is no data</CusText>
             </CusBox>
           </>
