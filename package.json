@@ -21,7 +21,7 @@
         "env:dev": "node scripts/set-environment.js development",
         "env:stage": "node scripts/set-environment.js staging",
         "env:prod": "node scripts/set-environment.js production",
-        "convert2Webp": "sh ./webp/cwebp.sh",
+        "convert2Webp": "sh ./scripts/cwebp.sh",
         "gen-svg": "npx svgicon-create"
     },
     "dependencies": {
