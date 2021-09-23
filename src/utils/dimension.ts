@@ -1,4 +1,4 @@
-import { Dimensions, Platform, StatusBar } from 'react-native';
+import { Dimensions, PixelRatio, Platform, StatusBar, StyleSheet } from 'react-native';
 import { spacingSize } from 'themes';
 
 export const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -67,3 +67,27 @@ export function getStatusBarHeight(safe: boolean) {
 export function getBottomSpace() {
   return isIphoneX() ? 34 : 0;
 }
+
+/** design based on iphone6 */
+const defaultPixelRatio = 1;
+const designWidth = 375;
+const designHeight = 667;
+
+// px is converted to dp
+const dpWidth = designWidth / defaultPixelRatio;
+const dpHeight = designHeight / defaultPixelRatio;
+
+//Get zoom ratio
+const scale = Math.min(SCREEN_HEIGHT / dpHeight, SCREEN_WIDTH / dpWidth);
+
+const ONE_PIXEL = StyleSheet.hairlineWidth;
+
+/**
+ * A public method to adapt to the screen size and pixel density
+ * @param size Design draft size
+ * @param scaleWithSystem Whether to scale with the phone system font size
+ */
+const px = (size: number) => {
+  return PixelRatio.roundToNearestPixel(size * scale);
+};
+export { px, ONE_PIXEL };

@@ -9,3 +9,8 @@ mock
 .yalc
 /yalc
 env.js
+
+icon-svg
+*.json
+src/components/svg-icon
+*.svg

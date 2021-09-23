@@ -20,7 +20,9 @@
         "rename-app": "npx react-native-rename \"Name App\" -b com.nameapp",
         "env:dev": "node scripts/set-environment.js development",
         "env:stage": "node scripts/set-environment.js staging",
-        "env:prod": "node scripts/set-environment.js production"
+        "env:prod": "node scripts/set-environment.js production",
+        "convert2Webp": "sh ./webp/cwebp.sh",
+        "gen-svg": "npx svgicon-create"
     },
     "dependencies": {
         "@react-native-async-storage/async-storage": "^1.15.8",
@@ -53,6 +55,7 @@
         "@babel/core": "^7.12.9",
         "@babel/runtime": "^7.12.5",
         "@react-native-community/eslint-config": "^2.0.0",
+        "@td-design/svgicon-cli": "^1.1.4",
         "@testing-library/jest-native": "^4.0.2",
         "@testing-library/react-hooks": "^7.0.2",
         "@testing-library/react-native": "^7.2.0",
