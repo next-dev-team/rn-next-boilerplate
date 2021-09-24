@@ -1,6 +1,9 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@shopify/restyle';
 import { Spinning } from 'components';
+import { Fallback } from 'components/Fallback';
 import 'i18n/index';
+import { navigationRef } from 'navigation/NavigationService';
 import React, { Suspense } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
@@ -16,7 +19,9 @@ const App = () => {
         <Provider store={store}>
           <ThemeProvider theme={false ? darkTheme : lightTheme}>
             <PersistGate loading={<Spinning visible />} persistor={persistor}>
-              <AppNavigation />
+              <NavigationContainer ref={navigationRef} fallback={<Fallback />}>
+                <AppNavigation />
+              </NavigationContainer>
             </PersistGate>
           </ThemeProvider>
         </Provider>
