@@ -1,5 +1,5 @@
 import { Dimensions, PixelRatio, Platform, StatusBar, StyleSheet } from 'react-native';
-import { spacingSize } from 'themes';
+import { spacingTheme } from 'themes/spacing';
 
 export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -19,15 +19,16 @@ export const getGridItemWidth = ({
 export const getGridItemMarginRight = ({
   index,
   numColumns,
-  spacing = spacingSize.m,
+  spacing = spacingTheme.m,
 }: {
   index: number;
   numColumns: number;
   spacing?: number;
 }) => ((index + 1) / numColumns === 0 ? 0 : spacing);
 
-export const pxToNum = (px = '0px') => {
-  return parseInt(px.replace('px', ''), 10);
+export const pxToNum = (px = '0px'): number => {
+  const num = parseInt(px.replace('px', ''), 10);
+  return PixelRatio.roundToNearestPixel(num * scale);
 };
 
 export function isIphoneX() {
@@ -90,4 +91,5 @@ const ONE_PIXEL = StyleSheet.hairlineWidth;
 const px = (size: number) => {
   return PixelRatio.roundToNearestPixel(size * scale);
 };
+
 export { px, ONE_PIXEL };

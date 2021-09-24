@@ -7,7 +7,8 @@ import RNRestart from 'react-native-restart';
 import { name as appName } from './app.json';
 
 LogBox.ignoreLogs(['Require cycle:']);
-LogBox.ignoreAllLogs();
+// ignore warnings
+LogBox.ignoreLogs(["EventEmitter.removeListener('change', ...)"]);
 
 /**
  * Uncaught JS exception

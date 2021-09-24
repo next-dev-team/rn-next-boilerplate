@@ -8,7 +8,8 @@ i18n
   .use(RNLanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    debug: process.env.NODE_ENV === 'development',
+    // debug:  process.env.NODE_ENV === 'development',
+    debug: false,
     resources: resources,
     // language to use if translations in user language are not available.
     fallbackLng: defaultLanguage,

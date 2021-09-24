@@ -3,6 +3,7 @@ import Button from 'components/Button';
 import { useNetWork } from 'hooks/useNetwork';
 import { goBack, isCanGoBack } from 'navigation/NavigationService';
 import React, { ReactNode } from 'react';
+import { SpacingTheme } from 'themes/spacing';
 import { ifIphoneX } from 'utils/dimension';
 
 export type CusHeaderProps = {
@@ -22,7 +23,7 @@ const CusHeader = (props: CusHeaderProps) => {
       alignItems="center"
       paddingHorizontal="l"
       flexDirection="row"
-      mt={ifIphoneX('50', 'none')}
+      mt={ifIphoneX<SpacingTheme>('xxl', 'none')}
     >
       <CusBox flex={1} flexDirection="row" alignItems="center" justifyContent="flex-start">
         {typeof left === 'boolean' && left && isCanGoBack() ? (

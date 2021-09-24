@@ -26,7 +26,7 @@ const RNLanguageDetector = {
       cb(persistedLocale);
     } catch {
       console.warn('Failed to detect locale!');
-      console.warn('Will use defaultLanguage:', defaultLanguage);
+      // console.warn('Will use defaultLanguage:', defaultLanguage);
 
       cb(defaultLanguage);
     }
