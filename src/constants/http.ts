@@ -1,5 +1,8 @@
+import env from 'env';
+
 export const apiUrl = {
-  baseUrl: 'https://placekitten.com',
+  baseUrl: env.API_URL,
+  token: env.Token,
 };
 
 export enum HTTP_STATUS {

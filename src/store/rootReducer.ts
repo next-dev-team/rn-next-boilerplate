@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import persistCombineReducers from 'redux-persist/lib/persistCombineReducers';
 import persistReducer from 'redux-persist/lib/persistReducer';
-import kittenSlice from './kittenSlice';
+import postsSlice from './postsSlice';
 
 /**
  * common persist nested store
@@ -25,7 +25,7 @@ const persistConfig = {
 
 const appStorePersistConfig = {
   ...commonConfig,
-  key: 'kittenSlice',
+  key: 'postsSlice',
   whitelist: ['kittenList'],
 };
 
@@ -33,7 +33,7 @@ const appStorePersistConfig = {
  * all reducer here
  */
 const allReducers = {
-  kittenSlice: persistReducer(appStorePersistConfig, kittenSlice),
+  postsSlice: persistReducer(appStorePersistConfig, postsSlice),
 };
 
 export default persistCombineReducers(persistConfig, allReducers);

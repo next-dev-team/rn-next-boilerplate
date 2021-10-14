@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@shopify/restyle';
-import { Spinning } from 'components';
-import { Fallback } from 'components/Fallback';
+import { Fallback } from 'components/atoms/Fallback';
+import Spinning from 'components/atoms/Spinning';
 import 'i18n/index';
 import { navigationRef } from 'navigation/NavigationService';
 import React, { Suspense } from 'react';

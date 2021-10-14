@@ -1,19 +1,14 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
-import { CusBox, CusText } from 'components';
-import CusHeader from 'navigation/components/CusOption';
+import { CusBox, CusText } from 'components/atoms';
+import Header from 'components/atoms/Layout/Header';
 import React from 'react';
-import { selKittenList } from 'store/kittenSlice';
-import { useAppSelector } from 'store/useStore';
 
 const RenderHeader = () => {
-  const kittenList = useAppSelector(selKittenList);
-
   return (
-    <CusHeader
+    <Header
       center={
         <CusBox flexDirection="row">
-          <CusText color="bgRegular">Kitten List- </CusText>
-          <CusText color="bgRegular">{kittenList.length} items</CusText>
+          <CusText>Kitten List- </CusText>
         </CusBox>
       }
     />

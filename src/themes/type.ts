@@ -1,4 +1,4 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 import { ColorsTheme } from './colors';
 import { SpacingTheme } from './spacing';
 
@@ -7,12 +7,13 @@ type BaseResponsive = {
   tablet?: SpacingTheme;
 };
 
-type RestStyle = Omit<ViewStyle, 'padding' | 'color' | 'margin'> & {
-  color?: ColorsTheme;
-  padding?: BaseResponsive;
-  margin?: BaseResponsive;
-  [key: string]: any;
-};
+type RestStyle = Omit<ViewStyle, 'padding' | 'color' | 'margin'> &
+  Omit<TextStyle, 'padding' | 'color' | 'margin'> & {
+    color?: ColorsTheme;
+    padding?: BaseResponsive;
+    margin?: BaseResponsive;
+    [key: string]: any;
+  };
 
 type CreateStyle = {
   [key: string]: RestStyle;

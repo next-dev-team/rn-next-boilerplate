@@ -2,7 +2,7 @@ import { navigateStack } from 'navigation/NavigationService';
 import { useEffect } from 'react';
 // import RNBootSplash from 'react-native-bootsplash';
 
-const useSplashScreen = (): any => {
+const useSplashScreen = () => {
   useEffect(() => {
     const init = async (): Promise<void> => {
       try {
