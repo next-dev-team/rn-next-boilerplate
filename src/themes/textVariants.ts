@@ -44,8 +44,8 @@ export const textVariants = createStyle({
   },
   body: {
     fontWeight: '400',
-    fontSize: 14,
-    lineHeight: 20,
+    fontSize: 16,
+    lineHeight: 23,
   },
   caption: {
     fontWeight: '400',

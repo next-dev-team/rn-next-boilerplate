@@ -3,26 +3,37 @@ import { useNetWork } from 'hooks/useNetwork';
 import { goBack, isCanGoBack } from 'navigation/NavigationService';
 import React, { ReactNode } from 'react';
 import { SpacingTheme } from 'themes/spacing';
-import { ifIphoneX } from 'utils/dimension';
+import { ifIphoneX, SCREEN_HEIGHT } from 'utils/dimension';
+import { BoxProps } from '../Box';
 
 export type CusHeaderProps = {
   center?: string | boolean | ReactNode;
-  left?: ReactNode | string | boolean;
+  left?: string | boolean | ReactNode;
   right?: ReactNode | boolean;
+  isFullImg?: boolean;
+  children?: ReactNode;
+  boxProps?: BoxProps;
 };
 
 const CusHeader = (props: CusHeaderProps) => {
   const { netInfo } = useNetWork();
-  const { center, left = true, right = true } = props;
+  const { center, left = true, right = true, isFullImg, children, boxProps } = props;
 
+  if (isFullImg) {
+    return (
+      <CusBox position="absolute" top={0} width="100%" bg="mask1" height={SCREEN_HEIGHT} {...boxProps}>
+        {children}
+      </CusBox>
+    );
+  }
   return (
     <CusBox
-      bg="primary400"
       height={50}
       alignItems="center"
       paddingHorizontal="l"
       flexDirection="row"
       mt={ifIphoneX<SpacingTheme>('x40', 'none')}
+      {...boxProps}
     >
       <CusBox flex={1} flexDirection="row" alignItems="center" justifyContent="flex-start">
         {typeof left === 'boolean' && left && isCanGoBack() ? (

@@ -1,5 +1,5 @@
 {
-    "save_dir": "./src/components/molecules/svg-icon",
+    "save_dir": "./src/components/atoms/svg-icon",
     "trim_icon_prefix": "icon",
     "default_icon_size": 20,
     "icon_svg": "./icon-svg",

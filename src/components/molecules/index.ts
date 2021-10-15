@@ -1,1 +1,2 @@
-export { PostCard } from './PostCard';
+export * from './Card/PostCard';
+export * from './Card/RecentCard';

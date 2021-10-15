@@ -12,6 +12,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).prepend(rootMiddleware),
+  devTools: false,
 });
 
 export const persistor = persistStore(store);

@@ -9,6 +9,7 @@ declare namespace PostsApi {
     user_id: number;
     title: string;
     body: string;
+    img: string;
   }
 
   interface Meta {

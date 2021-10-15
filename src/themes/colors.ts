@@ -11,6 +11,7 @@ const basePalette = {
   func400: '#1890FF',
   func500: '#F86E21',
   func600: '#F4333C',
+  blur: 'rgb(244, 249, 249)',
 };
 
 /** Default palette */
@@ -58,6 +59,7 @@ export const lightPalette = {
   ...palette,
   background: palette.gray50,
   mask: palette.gray600,
+  mask1: 'rgba(0, 0, 0, 0.12)',
   border: palette.gray200,
   icon: palette.gray300,
   disabled: palette.gray200,

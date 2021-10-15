@@ -1,11 +1,9 @@
-/* tslint:disable */
-/* eslint-disable */
-
 import React, { FC } from 'react';
 import { ViewProps } from 'react-native';
 import { GProps } from 'react-native-svg';
 import IconArrowdown from './IconArrowdown';
 import IconBells from './IconBells';
+import IconBookmark from './IconBookmark';
 import IconCheck from './IconCheck';
 import IconCheckcircle from './IconCheckcircle';
 import IconCheckcircleo from './IconCheckcircleo';
@@ -17,6 +15,7 @@ import IconDown from './IconDown';
 import IconEllipsis from './IconEllipsis';
 import IconEyeclose from './IconEyeclose';
 import IconEyeopen from './IconEyeopen';
+import IconLanguage from './IconLanguage';
 import IconLeft from './IconLeft';
 import IconMinus from './IconMinus';
 import IconPlus from './IconPlus';
@@ -25,10 +24,37 @@ import IconRadioUnchecked from './IconRadioUnchecked';
 import IconReload from './IconReload';
 import IconRight from './IconRight';
 import IconSearch from './IconSearch';
+import IconShare from './IconShare';
 import IconUp from './IconUp';
 import IconUser from './IconUser';
 
-export type IconNames = 'arrowdown' | 'bells' | 'check' | 'checkcircle' | 'checkcircleo' | 'clockcircleo' | 'close' | 'closecircleo' | 'date' | 'down' | 'ellipsis' | 'eyeclose' | 'eyeopen' | 'left' | 'minus' | 'plus' | 'radio-checked' | 'radio-unchecked' | 'reload' | 'right' | 'search' | 'up' | 'user';
+export type IconNames =
+  | 'arrowdown'
+  | 'bells'
+  | 'bookmark'
+  | 'check'
+  | 'checkcircle'
+  | 'checkcircleo'
+  | 'clockcircleo'
+  | 'close'
+  | 'closecircleo'
+  | 'date'
+  | 'down'
+  | 'ellipsis'
+  | 'eyeclose'
+  | 'eyeopen'
+  | 'language'
+  | 'left'
+  | 'minus'
+  | 'plus'
+  | 'radio-checked'
+  | 'radio-unchecked'
+  | 'reload'
+  | 'right'
+  | 'search'
+  | 'share'
+  | 'up'
+  | 'user';
 
 export interface SvgIconProps extends GProps, ViewProps {
   name: IconNames;
@@ -42,6 +68,8 @@ let SvgIcon: FC<SvgIconProps> = ({ name, ...rest }) => {
       return <IconArrowdown {...rest} />;
     case 'bells':
       return <IconBells {...rest} />;
+    case 'bookmark':
+      return <IconBookmark {...rest} />;
     case 'check':
       return <IconCheck {...rest} />;
     case 'checkcircle':
@@ -64,6 +92,8 @@ let SvgIcon: FC<SvgIconProps> = ({ name, ...rest }) => {
       return <IconEyeclose {...rest} />;
     case 'eyeopen':
       return <IconEyeopen {...rest} />;
+    case 'language':
+      return <IconLanguage {...rest} />;
     case 'left':
       return <IconLeft {...rest} />;
     case 'minus':
@@ -80,6 +110,8 @@ let SvgIcon: FC<SvgIconProps> = ({ name, ...rest }) => {
       return <IconRight {...rest} />;
     case 'search':
       return <IconSearch {...rest} />;
+    case 'share':
+      return <IconShare {...rest} />;
     case 'up':
       return <IconUp {...rest} />;
     case 'user':

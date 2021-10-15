@@ -4,14 +4,15 @@ import { TouchableOpacity } from 'react-native';
 
 export type ButtonProps = React.ComponentProps<typeof CusBox> & {
   onPress?: () => void;
+  activeOpacity?: number;
   label?: string;
   children?: ReactNode;
   labelProps?: React.ComponentProps<typeof CusText>;
 };
 
-const Button = ({ onPress, label, children, labelProps, ...rest }: ButtonProps) => {
+const Button = ({ onPress, label, children, labelProps, activeOpacity = 0.6, ...rest }: ButtonProps) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} activeOpacity={activeOpacity}>
       <CusBox {...rest}>
         {typeof label === 'string' ? (
           <CusText variant="button" {...labelProps}>

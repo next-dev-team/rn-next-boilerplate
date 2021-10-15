@@ -7,7 +7,7 @@ export type SectionProps = {
   children: React.ReactNode;
   content?: BoxProps;
   statusBarProps?: StatusBarProps;
-};
+} & BoxProps;
 
 export const Section = (props: SectionProps) => {
   const { isFull, children, ...rest } = props;
