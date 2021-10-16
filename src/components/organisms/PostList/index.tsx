@@ -11,7 +11,7 @@ export const PostList = (props: PostListProps) => {
   return (
     <>
       {data?.map?.((i, k) => {
-        return <PostCard key={i.id || k} mb="l" data={i} onPress={() => onPress?.(i)} />;
+        return <PostCard key={k} mb="l" data={i} onPress={() => onPress?.(i)} />;
       })}
     </>
   );

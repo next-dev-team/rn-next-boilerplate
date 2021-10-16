@@ -3,6 +3,7 @@ import { spacingTheme } from 'themes/spacing';
 
 export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
+export const isIOS = Platform.OS === 'ios';
 
 export const getnBymHeight = (width = SCREEN_WIDTH, n = 16, m = 9) => (width * m) / n;
 

@@ -1,6 +1,7 @@
 import { Container } from 'components/atoms/Container';
 import { Section } from 'components/atoms/Section';
 import { Posts } from 'components/templates';
+import { range } from 'lodash';
 import { navigateStack } from 'navigation/NavigationService';
 import React, { useEffect } from 'react';
 import { getPostsList, selPostList, selPostStatus } from 'store/postsSlice';
@@ -20,14 +21,27 @@ const KittenListScreen = () => {
   const onDetailCard = (state: PostsApi.Datum) => {
     navigateStack('PostDetail', { state });
   };
+  // console.log('postList', postList);
 
   return (
-    <Container spinning={postStatus === 'loading'} type="scroll">
+    <Container
+      barStyle="dark-content"
+      statusBarProps={{ backgroundColor: 'transparent' }}
+      spinning={postStatus === 'loading'}
+      type="scroll"
+    >
       <Section>
         <Posts
           {...{
-            data: postList?.data?.map(i => {
-              return { ...i, img: convertToHttps(fakerData().random.image()) };
+            data: range(20).map(i => {
+              return {
+                img: convertToHttps(fakerData().random.image()),
+                date: fakerData().date.future().toDateString(),
+                hour: fakerData().datatype.number(24),
+                body: fakerData().lorem.paragraphs(6),
+                title: fakerData().random.words(6),
+                id: fakerData().datatype.number(100),
+              };
             }) as [],
             onPress: onDetailCard,
           }}

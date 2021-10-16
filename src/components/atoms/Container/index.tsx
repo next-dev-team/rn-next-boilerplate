@@ -9,7 +9,7 @@ import Spinning, { SpinningProps } from '../Spinning';
 export type ContainerProps = {
   hasHeader?: true;
   children: React.ReactNode;
-  content?: BoxProps;
+  viewProps?: BoxProps;
   statusBarProps?: StatusBarProps;
   barStyle?: StatusBarProps['barStyle'];
   scrollStyle?: ScrollViewProps;
@@ -23,7 +23,7 @@ export const Container = (props: ContainerProps) => {
     hasHeader = true,
     children,
     statusBarProps,
-    content,
+    viewProps,
     type = 'view',
     scrollStyle,
     spinningProps,
@@ -36,10 +36,14 @@ export const Container = (props: ContainerProps) => {
   });
 
   return (
-    <SafeAreaView style={styles.container} edges={hasHeader ? ['left', 'right', 'bottom'] : ['left', 'right']}>
+    <SafeAreaView style={[styles.container]} edges={hasHeader ? ['left', 'right', 'bottom'] : ['left', 'right']}>
       <Spinning visible={spinning} {...spinningProps} />
-      <StatusBar barStyle={barStyle} backgroundColor="white" translucent animated {...statusBarProps} />
-      {type === 'view' ? <Box {...content}>{children}</Box> : <ScrollView style={scrollStyle}>{children}</ScrollView>}
+      <StatusBar barStyle={barStyle} translucent animated {...statusBarProps} />
+      {type === 'view' ? (
+        <Box {...viewProps}>{children}</Box>
+      ) : (
+        <ScrollView style={[scrollStyle]}>{children}</ScrollView>
+      )}
     </SafeAreaView>
   );
 };

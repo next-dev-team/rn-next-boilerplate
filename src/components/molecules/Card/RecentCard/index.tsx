@@ -1,32 +1,37 @@
-import { CusBox, CusText, Flex } from 'components/atoms';
+import { CusBox, CusButton, CusText, Flex } from 'components/atoms';
 import { useAppTheme } from 'hooks/useTheme';
 import React from 'react';
 import FastImage from 'react-native-fast-image';
-import { fakerData } from 'utils/mockData';
-import { convertToHttps } from 'utils/string';
 
-export const ResentCard = () => {
+export const ResentCard = ({
+  data,
+  onPress,
+}: {
+  data: PostsApi.Datum;
+  onPress: ((v: PostsApi.Datum) => void) | undefined;
+}) => {
   const { borderRadii, colors } = useAppTheme();
 
+  if (!data) return null;
   return (
-    <CusBox height={120} borderRadius="m" flexDirection="row" mb="xl">
+    <CusButton onPress={() => onPress?.(data)} height={120} borderRadius="m" flexDirection="row" mb="xl">
       <FastImage
-        source={{ uri: convertToHttps(fakerData().random.image()) }}
+        source={{ uri: data?.img }}
         style={{ width: 120, height: ' 100%', borderRadius: borderRadii.m, backgroundColor: colors.background }}
       />
       <CusBox flex={1} justifyContent="space-between">
         <CusText variant="pageHead" pl="s" numberOfLines={3} lineHeight={28}>
-          {fakerData().lorem.lines(3)}
+          {data?.title}
         </CusText>
         <Flex justifyContent="space-between">
           <CusText variant="body" fontWeight="bold" textTransform="uppercase" color="func500" pl="s" numberOfLines={3}>
-            {fakerData().lorem.words(1)}
+            {data?.date}
           </CusText>
           <CusText variant="body" fontWeight="bold" textTransform="uppercase" color="func500" pl="s" numberOfLines={3}>
-            {fakerData().date.future().getHours()}h ago
+            {data?.hour}h ago
           </CusText>
         </Flex>
       </CusBox>
-    </CusBox>
+    </CusButton>
   );
 };

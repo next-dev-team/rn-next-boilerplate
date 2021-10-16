@@ -1,9 +1,8 @@
 import { CusBox, CusButton, CusText } from 'components/atoms';
-import { useNetWork } from 'hooks/useNetwork';
 import { goBack, isCanGoBack } from 'navigation/NavigationService';
 import React, { ReactNode } from 'react';
 import { SpacingTheme } from 'themes/spacing';
-import { ifIphoneX, SCREEN_HEIGHT } from 'utils/dimension';
+import { ifIphoneX } from 'utils/dimension';
 import { BoxProps } from '../Box';
 
 export type CusHeaderProps = {
@@ -16,23 +15,16 @@ export type CusHeaderProps = {
 };
 
 const CusHeader = (props: CusHeaderProps) => {
-  const { netInfo } = useNetWork();
-  const { center, left = true, right = true, isFullImg, children, boxProps } = props;
+  const { center, left = true, right = true, boxProps } = props;
 
-  if (isFullImg) {
-    return (
-      <CusBox position="absolute" top={0} width="100%" bg="mask1" height={SCREEN_HEIGHT} {...boxProps}>
-        {children}
-      </CusBox>
-    );
-  }
   return (
     <CusBox
-      height={50}
+      bg="white"
       alignItems="center"
       paddingHorizontal="l"
       flexDirection="row"
-      mt={ifIphoneX<SpacingTheme>('x40', 'none')}
+      pt={ifIphoneX<SpacingTheme>('x40', 'xl')}
+      pb="s"
       {...boxProps}
     >
       <CusBox flex={1} flexDirection="row" alignItems="center" justifyContent="flex-start">
@@ -61,12 +53,12 @@ const CusHeader = (props: CusHeaderProps) => {
       </CusBox>
 
       <CusBox flex={1} justifyContent="flex-end">
-        {typeof right === 'boolean' ? (
+        {typeof right === 'string' ? (
           <CusText variant="body" opacity={0.9} textAlign="right">
-            {netInfo?.isConnected ? 'Online' : 'Offline'}
+            {right}
           </CusText>
         ) : (
-          right
+          <CusBox alignSelf="flex-end">{right}</CusBox>
         )}
       </CusBox>
     </CusBox>

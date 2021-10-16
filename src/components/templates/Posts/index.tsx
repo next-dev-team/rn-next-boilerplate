@@ -5,7 +5,7 @@ import React from 'react';
 export const Posts = ({ ...rest }: PostListProps) => {
   return (
     <>
-      <ResentCard />
+      <ResentCard {...{ onPress: rest.onPress, data: rest?.data?.[5] }} />
       <PostList {...{ ...rest }} />
     </>
   );

@@ -59,7 +59,7 @@ export const lightPalette = {
   ...palette,
   background: palette.gray50,
   mask: palette.gray600,
-  mask1: 'rgba(0, 0, 0, 0.12)',
+  mask1: 'rgba(0, 0, 0, 0.15)',
   border: palette.gray200,
   icon: palette.gray300,
   disabled: palette.gray200,

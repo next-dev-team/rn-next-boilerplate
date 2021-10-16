@@ -10,6 +10,8 @@ declare namespace PostsApi {
     title: string;
     body: string;
     img: string;
+    date: string;
+    hour: string;
   }
 
   interface Meta {
