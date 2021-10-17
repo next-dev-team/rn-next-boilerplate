@@ -9,7 +9,7 @@ const Stack = createStackNavigator<AppStackParams>();
 export type AppStackParams = {
   Splash: undefined;
   KittenList: undefined;
-  PostDetail: { state: PostsApi.Datum };
+  PostDetail: { state: PostsApi.Datum | undefined };
 };
 
 const AppNavigation = () => {

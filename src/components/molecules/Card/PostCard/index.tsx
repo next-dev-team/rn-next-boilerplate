@@ -4,7 +4,6 @@ import { useAppTheme } from 'hooks/useTheme';
 import React from 'react';
 import FastImage from 'react-native-fast-image';
 import { px } from 'utils/dimension';
-import { fakerData } from 'utils/mockData';
 
 export type PostCardProps = ButtonProps & {
   data: PostsApi.Datum;
@@ -42,7 +41,7 @@ export const PostCard = (props: PostCardProps) => {
           </CusBox>
           <Flex justifyContent="space-between">
             <CusText fontWeight="bold" variant="body" textTransform="uppercase" color="func500">
-              {fakerData().date.future().toLocaleDateString()}
+              {data.date}
             </CusText>
             <CusText variant="body" fontSize={16} fontWeight="bold" textTransform="uppercase" color="gray300">
               No: {data?.id}
