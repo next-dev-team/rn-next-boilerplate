@@ -47,7 +47,6 @@
         "@react-navigation/bottom-tabs": "^6.0.5",
         "@react-navigation/native": "^6.0.2",
         "@react-navigation/stack": "^6.0.7",
-        "@reduxjs/toolkit": "^1.6.1",
         "@shopify/polaris-tokens": "^4.0.0",
         "@shopify/restyle": "^1.4.0",
         "ahooks": "^2.10.9",
@@ -72,10 +71,7 @@
         "react-native-screens": "^3.7.2",
         "react-native-svg": "^12.1.1",
         "react-native-vector-icons": "^8.1.0",
-        "react-native-webview": "^11.13.0",
-        "react-redux": "^7.2.5",
-        "redux": "^4.1.1",
-        "redux-persist": "^6.0.0"
+        "react-native-webview": "^11.13.0"
     },
     "devDependencies": {
         "@babel/core": "^7.12.9",
