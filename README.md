@@ -1,8 +1,8 @@
-# 🚀 rn-next-boilerplate
+# 🚀 rn-next-boilerplate-mobx
 
 [![React Native](https://img.shields.io/badge/React%20Native-v0.65.1-green.svg)](https://facebook.github.io/react-native/) [![React Navigation V5](https://img.shields.io/badge/React%20Navigation-v6.0.2-blue.svg)](https://reactnavigation.org/)
 
-KittenApp is React Native application. This project is configured with redux, redux thunk with redux-tookit and redux persist. Uses latest version of react-navigation (v6) and using Restyle for type-enforced system to design UI components
+This is Starter of React Native application. This project is configured with mobx with react-navigation (v6) and using Restyle for type-enforced system to design UI components
 
 ## Technologies Use
 
@@ -11,8 +11,8 @@ KittenApp is React Native application. This project is configured with redux, re
 - [React Navigation 6](https://reactnavigation.org/) theming support.
 - [React Native Gesture Handler](https://github.com/kmagiera/react-native-gesture-handler)
 - [Shopify restyle](https://github.com/Shopify/restyle) - library for building UI libraries with theming support
-- [Redux](http://redux.js.org/) with [hooks](https://react-redux.js.org/api/hooks) support
-- [Redux Persist](https://github.com/rt2zz/redux-persist/)
+- [Mobx](https://mobx.js.org/README.html) with typescript
+
 - [Axios](https://github.com/axios/axios)
 - [Jest](https://facebook.github.io/jest/)
 - [Eslint](http://eslint.org/) ([Airbnb config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb))
@@ -39,23 +39,3 @@ KittenApp is React Native application. This project is configured with redux, re
      - Hit `Run` after selecting the desired device
 
 6. Enjoy!!!
-
-## Demo Feature
-
-- Have two screen:
-  - KittenList: List with random kitten images with randomly generated names.
-  - KittenItem: view kitten detail
-- KittenList Screen:
-  - On application startup all images retrieved from kitten API then combine with randomly name and description with loading indicator while images are being fetched to display in list is empty will show empty message.
-  - User can filter number to displayed kitten list (30/50/100)
-  - Show Online/Offline on Header right
-  - Show specific count specify count of displayed kitten items in header with title
-- KittenItem Screen:
-
-  - header with go back and title
-  - in Kitten item screen render kitten image at the top followed by it’s name and display kitten description below (Lorem Ipsum).
-
-- BONUS
-  - Generate signed .apk file, release version in root folder: [app-release.apk](https://github.com/rimsila/kitten-app/blob/main/app-release.apk)
-  - Write tests for some react-native component and utils
-  - Store kitten data in redux state and support offline mode and auto refetch when online

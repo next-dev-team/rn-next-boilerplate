@@ -9,7 +9,7 @@ export const Posts = ({ ...rest }: PostListProps) => {
       <CusText variant="pageHead" mb="m">
         Daily News
       </CusText>
-      <ResentCard {...{ onPress: rest.onPress, data: rest?.data?.[5] }} />
+      <ResentCard {...{ onPress: rest.onPress, data: rest?.data?.[3] }} />
       <PostList {...{ ...rest }} />
     </>
   );

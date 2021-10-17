@@ -1,7 +1,7 @@
 {
     "common": {
-        "online": "online",
-        "counter_app": "counter app"
+        "online": "អនឡាន",
+        "counter_app": "应用 counter"
     },
     "Header": {
         "back": "Back"

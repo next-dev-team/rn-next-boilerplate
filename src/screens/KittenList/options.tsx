@@ -1,16 +1,17 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
 import { CusButton, CusText, Flex } from 'components/atoms';
 import Header from 'components/atoms/Layout/Header';
-import SvgIcon from 'components/atoms/svg-icon';
 import { useNetWork } from 'hooks/useNetwork';
 import { useAppTheme } from 'hooks/useTheme';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { TextInput } from 'react-native';
 import { SCREEN_WIDTH } from 'utils/dimension';
 
 const RenderHeader = () => {
   const { colors, spacing } = useAppTheme();
   const { netInfo } = useNetWork();
+  const { i18n } = useTranslation();
 
   return (
     <Header
@@ -20,7 +21,7 @@ const RenderHeader = () => {
           <TextInput
             placeholder="Search Post..."
             style={{
-              width: SCREEN_WIDTH * 0.65,
+              width: SCREEN_WIDTH * 0.58,
               paddingHorizontal: spacing.m,
               height: 38,
               borderWidth: 1,
@@ -33,14 +34,21 @@ const RenderHeader = () => {
       }
       right={
         <Flex>
-          <CusButton mr="s" bg="white" borderRadius="full">
-            <SvgIcon name="plus" size={35} />
-          </CusButton>
           <CusText>{netInfo?.isConnected && netInfo?.isInternetReachable ? 'Online' : 'Offline'}</CusText>
-          {/* <FastImage
-            source={{ uri: convertToHttps(fakerData().random.image()) }}
-            style={{ width: 40, height: 40, borderRadius: 40 / 2, borderWidth: 1.5, borderColor: colors.gray600 }}
-          /> */}
+          <CusButton
+            ml="s"
+            bg="white"
+            alignItems="center"
+            justifyContent="center"
+            height={40}
+            borderRadius="full"
+            paddingHorizontal="xs"
+            onPress={() => i18n.changeLanguage(i18n.language === 'ch' ? 'en' : 'ch')}
+          >
+            <CusText variant="caption" textTransform="uppercase">
+              {i18n.language === 'ch' ? 'English' : '中国'}
+            </CusText>
+          </CusButton>
         </Flex>
       }
     />

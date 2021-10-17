@@ -1,5 +1,6 @@
 import { CusBox, CusButton, CusText, Flex, SvgIcon } from 'components/atoms';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export type CounterProps = {
   count: number;
@@ -9,11 +10,12 @@ export type CounterProps = {
 
 export const Counter = (props: CounterProps) => {
   const { count, decCounter, incCounter } = props;
+  const { t } = useTranslation();
 
   return (
     <CusBox borderRadius="s" paddingVertical="s" bg="gray100" mb="l" alignItems="center">
-      <CusText variant="pageHead" pb="s">
-        Counter App
+      <CusText paddingHorizontal="xs" variant="pageHead" textTransform="capitalize" pb="s">
+        {t('common:counter_app')}
       </CusText>
       <CusBox mb="s" borderWidth={0.7} width="100%" borderColor="white" />
       <Flex>
