@@ -2,7 +2,6 @@ import { CusBox, CusText } from 'components/atoms';
 import { useAppTheme } from 'hooks/useTheme';
 import React from 'react';
 import { ActivityIndicator, Modal } from 'react-native';
-import { SCREEN_HEIGHT } from 'utils/dimension';
 export type SpinningProps = {
   visible?: boolean;
 };
@@ -10,7 +9,7 @@ const Spinning = ({ visible = false }: SpinningProps) => {
   const { colors } = useAppTheme();
   return (
     <Modal statusBarTranslucent transparent visible={visible}>
-      <CusBox height={SCREEN_HEIGHT} justifyContent="center" alignItems="center" bg="mask">
+      <CusBox flex={1} justifyContent="center" alignItems="center" bg="mask">
         <CusBox
           bg="white"
           width={85}

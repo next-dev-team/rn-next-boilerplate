@@ -1,8 +1,7 @@
 import { CusBox, CusButton, CusText } from 'components/atoms';
 import { goBack, isCanGoBack } from 'navigation/NavigationService';
 import React, { ReactNode } from 'react';
-import { SpacingTheme } from 'themes/spacing';
-import { ifIphoneX } from 'utils/dimension';
+import { getStatusBarHeight, px } from 'utils/dimension';
 import { BoxProps } from '../Box';
 
 export type CusHeaderProps = {
@@ -23,8 +22,8 @@ const CusHeader = (props: CusHeaderProps) => {
       alignItems="center"
       paddingHorizontal="l"
       flexDirection="row"
-      pt={ifIphoneX<SpacingTheme>('x40', 'xl')}
       pb="s"
+      style={{ paddingTop: getStatusBarHeight() + px(15) }}
       {...boxProps}
     >
       <CusBox flex={1} flexDirection="row" alignItems="center" justifyContent="flex-start">

@@ -36,7 +36,7 @@ const RenderHeader = () => {
           <CusButton mr="s" bg="white" borderRadius="full">
             <SvgIcon name="plus" size={35} />
           </CusButton>
-          <CusText>{netInfo?.isConnected ? 'Online' : 'Offline'}</CusText>
+          <CusText>{netInfo?.isConnected && netInfo?.isInternetReachable ? 'Online' : 'Offline'}</CusText>
           {/* <FastImage
             source={{ uri: convertToHttps(fakerData().random.image()) }}
             style={{ width: 40, height: 40, borderRadius: 40 / 2, borderWidth: 1.5, borderColor: colors.gray600 }}

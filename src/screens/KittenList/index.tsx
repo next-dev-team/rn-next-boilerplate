@@ -1,7 +1,6 @@
 import { Container } from 'components/atoms/Container';
 import { Section } from 'components/atoms/Section';
 import { Posts } from 'components/templates';
-import { range } from 'lodash';
 import { navigateStack } from 'navigation/NavigationService';
 import React, { useEffect } from 'react';
 import { getPostsList, selPostList, selPostStatus } from 'store/postsSlice';
@@ -33,14 +32,15 @@ const KittenListScreen = () => {
       <Section>
         <Posts
           {...{
-            data: range(20).map(i => {
+            data: postList?.data?.map?.((i: any) => {
               return {
                 img: convertToHttps(fakerData().random.image()),
                 date: fakerData().date.future().toDateString(),
-                hour: fakerData().datatype.number(24),
-                body: fakerData().lorem.paragraphs(6),
-                title: fakerData().random.words(6),
-                id: fakerData().datatype.number(100),
+                // hour: fakerData().datatype.number(24),
+                // body: fakerData().lorem.paragraphs(6),
+                // title: fakerData().random.words(6),
+                // id: fakerData().datatype.number(100),
+                ...i,
               };
             }) as [],
             onPress: onDetailCard,

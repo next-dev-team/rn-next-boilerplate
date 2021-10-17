@@ -58,7 +58,7 @@ export function ifIphoneX<T extends Object>(iphoneXStyle: T, regularStyle: T): T
   return regularStyle;
 }
 
-export function getStatusBarHeight(safe: boolean) {
+export function getStatusBarHeight(safe?: boolean) {
   return Platform.select({
     ios: ifIphoneX(safe ? 44 : 30, 20),
     android: StatusBar.currentHeight,
