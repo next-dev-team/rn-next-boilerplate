@@ -21,7 +21,7 @@ const RenderHeader = () => {
           <TextInput
             placeholder="Search Post..."
             style={{
-              width: SCREEN_WIDTH * 0.58,
+              width: SCREEN_WIDTH * 0.56,
               paddingHorizontal: spacing.m,
               height: 38,
               borderWidth: 1,

@@ -1,6 +1,6 @@
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { KittenList, KittenListOption } from 'screens';
+import { PostScreen, PostScreenOption } from 'screens';
 import PostDetail from 'screens/PostDetail';
 import PostDetailOption from 'screens/PostDetail/options';
 
@@ -21,7 +21,7 @@ const AppNavigation = () => {
       }}
     >
       {/* <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} /> */}
-      <Stack.Screen name="KittenList" component={KittenList} options={KittenListOption} />
+      <Stack.Screen name="KittenList" component={PostScreen} options={PostScreenOption} />
       <Stack.Screen name="PostDetail" component={PostDetail} options={PostDetailOption} />
     </Stack.Navigator>
   );

@@ -6,7 +6,7 @@ import { postStore } from 'store';
 import { RenderCounter } from './Counter';
 import { RenderPost } from './Post';
 
-const KittenListScreen = observer(() => {
+const PostScreen = observer(() => {
   const { postStatus } = postStore;
 
   return (
@@ -24,4 +24,4 @@ const KittenListScreen = observer(() => {
   );
 });
 
-export default KittenListScreen;
+export default PostScreen;
