@@ -8,6 +8,7 @@ export interface PostSlice {
   postList: Partial<PostsApi.PostsType>;
   postDetail: Partial<PostsApi.Datum>;
   count: number;
+  refresh: boolean;
 }
 
 const initialState: PostSlice = {
@@ -18,12 +19,16 @@ const initialState: PostSlice = {
   },
   postDetail: {},
   count: 0,
+  refresh: false,
 };
 
 const postStore = observable({
   ...initialState,
   decCounter: action(() => {
     postStore.count -= 1;
+  }),
+  refreshPost: action((refresh: boolean) => {
+    postStore.refresh = refresh;
   }),
   incCounter: action(() => {
     postStore.count += 1;
@@ -33,6 +38,7 @@ const postStore = observable({
     const response: AxiosResponse<PostsApi.PostsType> = await request.get(`/posts`);
     postStore.postList = response.data;
     postStore.postStatus = 'idle';
+    return postStore.postList;
   }),
   getPostDetail: action(async (id: any) => {
     postStore.postDetailStatus = 'loading';

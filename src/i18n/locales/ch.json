@@ -1,7 +1,8 @@
 {
     "common": {
-        "online": "អនឡាន",
-        "counter_app": "应用 counter"
+        "online": "在线的",
+        "counter_app": "应用 counter",
+        "search_post": "搜索 Post"
     },
     "Header": {
         "back": "Back"

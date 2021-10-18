@@ -4,14 +4,14 @@ import { useMemo } from 'react';
 export const useNetWork = () => {
   const netInfo = useNetInfo();
 
-  const offline = useMemo(
-    () => !(netInfo.isConnected && netInfo.isInternetReachable),
+  const isOnline = useMemo(
+    () => netInfo.isConnected && netInfo.isInternetReachable,
     [netInfo.isConnected, netInfo.isInternetReachable]
   );
 
   return {
     netInfo,
-    offline,
+    isOnline,
     addEventListener,
   };
 };

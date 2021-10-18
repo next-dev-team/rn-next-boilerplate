@@ -10,8 +10,8 @@ import { SCREEN_WIDTH } from 'utils/dimension';
 
 const RenderHeader = () => {
   const { colors, spacing } = useAppTheme();
-  const { netInfo } = useNetWork();
-  const { i18n } = useTranslation();
+  const { isOnline } = useNetWork();
+  const { i18n, t } = useTranslation();
 
   return (
     <Header
@@ -19,7 +19,7 @@ const RenderHeader = () => {
       left={
         <>
           <TextInput
-            placeholder="Search Post..."
+            placeholder={t('common:search_post') + '...'}
             style={{
               width: SCREEN_WIDTH * 0.56,
               paddingHorizontal: spacing.m,
@@ -34,7 +34,7 @@ const RenderHeader = () => {
       }
       right={
         <Flex>
-          <CusText>{netInfo?.isConnected && netInfo?.isInternetReachable ? 'Online' : 'Offline'}</CusText>
+          <CusText>{isOnline ? t('common:online') : 'Offline'}</CusText>
           <CusButton
             ml="s"
             bg="white"

@@ -25,9 +25,9 @@ export const RenderPost = observer(() => {
           date: fakerData().date.future().toDateString(),
           hour: fakerData().datatype.number(24),
           // body: fakerData().lorem.paragraphs(6),
-          // title: fakerData().random.words(6),
-          id: fakerData().datatype.number(100),
           ...i,
+          title: fakerData().random.words(6),
+          id: fakerData().datatype.number(100),
         };
       }) as [],
     [postList]

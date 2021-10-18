@@ -1,7 +1,8 @@
 {
     "common": {
         "online": "online",
-        "counter_app": "counter app"
+        "counter_app": "counter app",
+        "search_post": "Search Post"
     },
     "Header": {
         "back": "Back"

@@ -1,4 +1,5 @@
 import { useAppTheme } from 'hooks/useTheme';
+import { omit } from 'lodash';
 import * as React from 'react';
 import { ScrollViewProps, StatusBar, StatusBarProps, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -12,7 +13,7 @@ export type ContainerProps = {
   viewProps?: BoxProps;
   statusBarProps?: StatusBarProps;
   barStyle?: StatusBarProps['barStyle'];
-  scrollStyle?: ScrollViewProps;
+  scrollViewProps?: ScrollViewProps;
   type: 'view' | 'scroll';
   spinningProps?: Partial<SpinningProps>;
   spinning?: SpinningProps['visible'];
@@ -25,14 +26,18 @@ export const Container = (props: ContainerProps) => {
     statusBarProps,
     viewProps,
     type = 'view',
-    scrollStyle,
+    scrollViewProps,
     spinningProps,
     spinning,
     barStyle = 'default',
   } = props;
   const theme = useAppTheme();
+
   const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: theme.colors.white },
+    scrollView: {
+      flex: 1,
+    },
   });
 
   return (
@@ -42,7 +47,9 @@ export const Container = (props: ContainerProps) => {
       {type === 'view' ? (
         <Box {...viewProps}>{children}</Box>
       ) : (
-        <ScrollView style={[scrollStyle]}>{children}</ScrollView>
+        <ScrollView style={[styles.scrollView, scrollViewProps?.style]} {...omit(scrollViewProps, 'style')}>
+          {children}
+        </ScrollView>
       )}
     </SafeAreaView>
   );
