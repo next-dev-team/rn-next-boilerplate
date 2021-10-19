@@ -22,9 +22,8 @@ target 'Kitten' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!()
+  use_flipper!({ 'Flipper' => '0.111.0' })
 
-  use_flipper!
   post_install do |installer|
     flipper_post_install(installer)
     installer.pods_project.build_configurations.each do |config|

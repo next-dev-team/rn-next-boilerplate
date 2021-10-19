@@ -10,6 +10,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { darkTheme, lightTheme } from 'themes';
 import AppNavigation from '../navigation/AppNavigation';
 
+// if (__DEV__) {
+//   spy(createMobxDebugger());
+// }
+
 const App = () => {
   configure({
     enforceActions: 'never',

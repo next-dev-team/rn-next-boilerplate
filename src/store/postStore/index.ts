@@ -38,6 +38,8 @@ const postStore = observable({
     const response: AxiosResponse<PostsApi.PostsType> = await request.get(`/posts`);
     postStore.postList = response.data;
     postStore.postStatus = 'idle';
+    console.log(' response', response.data);
+
     return postStore.postList;
   }),
   getPostDetail: action(async (id: any) => {
