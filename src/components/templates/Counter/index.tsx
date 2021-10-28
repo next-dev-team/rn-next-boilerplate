@@ -1,6 +1,7 @@
 import { CusBox, CusButton, CusText, Flex, SvgIcon } from 'components/atoms';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { setTestEl } from 'test/helpers/setTestEl';
 
 export type CounterProps = {
   count: number;
@@ -19,11 +20,11 @@ export const Counter = (props: CounterProps) => {
       </CusText>
       <CusBox mb="s" borderWidth={0.7} width="100%" borderColor="white" />
       <Flex>
-        <CusButton bg="func500" mr="s" borderRadius="full" onPress={decCounter}>
+        <CusButton {...setTestEl('counter-dec')} bg="func500" mr="s" borderRadius="full" onPress={decCounter}>
           <SvgIcon name="minus" size={40} color="white" />
         </CusButton>
         <CusText variant="pageHead">{count}</CusText>
-        <CusButton bg="func300" ml="s" borderRadius="full" onPress={incCounter}>
+        <CusButton {...setTestEl('counter-inc')} bg="func300" ml="s" borderRadius="full" onPress={incCounter}>
           <SvgIcon name="plus" size={40} color="white" />
         </CusButton>
       </Flex>
