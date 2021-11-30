@@ -1,2 +1,1 @@
-export * from './Card/PostCard';
-export * from './Card/RecentCard';
+export { default as Profile1 } from './card/profile1';

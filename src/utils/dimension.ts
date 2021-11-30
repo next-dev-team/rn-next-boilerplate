@@ -1,5 +1,4 @@
 import { Dimensions, PixelRatio, Platform, StatusBar, StyleSheet } from 'react-native';
-import { spacingTheme } from 'themes/spacing';
 
 export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -20,7 +19,7 @@ export const getGridItemWidth = ({
 export const getGridItemMarginRight = ({
   index,
   numColumns,
-  spacing = spacingTheme.m,
+  spacing,
 }: {
   index: number;
   numColumns: number;

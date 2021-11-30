@@ -1,7 +1,4 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { ThemeProvider } from '@shopify/restyle';
-import { Fallback } from 'components/atoms/Fallback';
-import Spinning from 'components/atoms/Spinning';
 import 'i18n/index';
 import { navigationRef } from 'navigation/NavigationService';
 import React, { Suspense } from 'react';
@@ -9,21 +6,21 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from 'store/store';
-import { darkTheme, lightTheme } from 'themes';
+import { useDeviceContext } from 'twrnc';
+import { tw } from 'utils/tailwind';
 import AppNavigation from '../navigation/AppNavigation';
 
 const App = () => {
+  useDeviceContext(tw);
   return (
     <Suspense fallback={null}>
       <SafeAreaProvider>
         <Provider store={store}>
-          <ThemeProvider theme={false ? darkTheme : lightTheme}>
-            <PersistGate loading={<Spinning visible />} persistor={persistor}>
-              <NavigationContainer ref={navigationRef} fallback={<Fallback />}>
-                <AppNavigation />
-              </NavigationContainer>
-            </PersistGate>
-          </ThemeProvider>
+          <PersistGate loading={null} persistor={persistor}>
+            <NavigationContainer ref={navigationRef} fallback={null}>
+              <AppNavigation />
+            </NavigationContainer>
+          </PersistGate>
         </Provider>
       </SafeAreaProvider>
     </Suspense>
