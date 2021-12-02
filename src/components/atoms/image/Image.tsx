@@ -13,7 +13,7 @@ const Image = ({ children, className = '', src, source, style, ...rest }: IImage
   return (
     <FastImage
       source={{ uri: src, ...(source as any) }}
-      style={[tw.style(`${className.replace(/^w-full?/, 'w-screen')}`), style]}
+      style={[tw.style(`w-full h-full ${className}`), style]}
       {...rest}
     >
       {children}

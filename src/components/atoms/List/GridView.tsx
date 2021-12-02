@@ -24,7 +24,7 @@ function GridView<T>(props: IGridViewProps<T>) {
     ...rest
   } = props;
 
-  const itemWidth = getGridItemWidth({ numColumns: numColumns, containerWidth: containerWidth, spacing: rightSpacing });
+  const itemWidth = getGridItemWidth({ numColumns, containerWidth, spacing: rightSpacing });
 
   const renderCustomItem: ListRenderItem<T> = ({ item, index, separators }) => {
     return (

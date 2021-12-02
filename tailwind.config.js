@@ -1,9 +1,17 @@
+/**
+ * @type {import('tailwindcss/tailwind-config').TailwindConfig}
+ */
+const pxToRem = px => {
+  return `${px / 16}rem`;
+};
+
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
+      minHeight: {},
       colors: {
         primary: '#8257E5',
         success: '#1DB863',
@@ -17,19 +25,9 @@ module.exports = {
         },
       },
       fontSize: {
-        caption: [6, 0],
+        //font - line-height
+        caption: [12, '20px'],
         xs: [12, 0],
-        sm: [14, 0],
-        base: [16, 0],
-        lg: [18, 0],
-        xl: [20, 0],
-        '2xl': [24, 0],
-        '3xl': [30, 0],
-        '4xl': [36, 0],
-        '5xl': [48, 0],
-        '6xl': [60, 0],
-        '7xl': [72, 0],
-        '8xl': [96, 0],
       },
     },
   },

@@ -1,3 +1,6 @@
+/* tslint:disable */
+/* eslint-disable */
+
 import React, { FC } from 'react';
 import { ViewProps } from 'react-native';
 import { GProps } from 'react-native-svg';
@@ -11,6 +14,7 @@ import IconClockcircleo from './IconClockcircleo';
 import IconClose from './IconClose';
 import IconClosecircleo from './IconClosecircleo';
 import IconDate from './IconDate';
+import IconDay from './IconDay';
 import IconDown from './IconDown';
 import IconEllipsis from './IconEllipsis';
 import IconEyeclose from './IconEyeclose';
@@ -18,6 +22,7 @@ import IconEyeopen from './IconEyeopen';
 import IconLanguage from './IconLanguage';
 import IconLeft from './IconLeft';
 import IconMinus from './IconMinus';
+import IconNight from './IconNight';
 import IconPlus from './IconPlus';
 import IconRadioChecked from './IconRadioChecked';
 import IconRadioUnchecked from './IconRadioUnchecked';
@@ -28,33 +33,7 @@ import IconShare from './IconShare';
 import IconUp from './IconUp';
 import IconUser from './IconUser';
 
-export type IconNames =
-  | 'arrowdown'
-  | 'bells'
-  | 'bookmark'
-  | 'check'
-  | 'checkcircle'
-  | 'checkcircleo'
-  | 'clockcircleo'
-  | 'close'
-  | 'closecircleo'
-  | 'date'
-  | 'down'
-  | 'ellipsis'
-  | 'eyeclose'
-  | 'eyeopen'
-  | 'language'
-  | 'left'
-  | 'minus'
-  | 'plus'
-  | 'radio-checked'
-  | 'radio-unchecked'
-  | 'reload'
-  | 'right'
-  | 'search'
-  | 'share'
-  | 'up'
-  | 'user';
+export type IconNames = 'arrowdown' | 'bells' | 'bookmark' | 'check' | 'checkcircle' | 'checkcircleo' | 'clockcircleo' | 'close' | 'closecircleo' | 'date' | 'day' | 'down' | 'ellipsis' | 'eyeclose' | 'eyeopen' | 'language' | 'left' | 'minus' | 'night' | 'plus' | 'radio-checked' | 'radio-unchecked' | 'reload' | 'right' | 'search' | 'share' | 'up' | 'user';
 
 export interface SvgIconProps extends GProps, ViewProps {
   name: IconNames;
@@ -84,6 +63,8 @@ let SvgIcon: FC<SvgIconProps> = ({ name, ...rest }) => {
       return <IconClosecircleo {...rest} />;
     case 'date':
       return <IconDate {...rest} />;
+    case 'day':
+      return <IconDay {...rest} />;
     case 'down':
       return <IconDown {...rest} />;
     case 'ellipsis':
@@ -98,6 +79,8 @@ let SvgIcon: FC<SvgIconProps> = ({ name, ...rest }) => {
       return <IconLeft {...rest} />;
     case 'minus':
       return <IconMinus {...rest} />;
+    case 'night':
+      return <IconNight {...rest} />;
     case 'plus':
       return <IconPlus {...rest} />;
     case 'radio-checked':

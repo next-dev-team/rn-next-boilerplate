@@ -1736,6 +1736,11 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
 
+"@types/tailwindcss@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@types/tailwindcss/-/tailwindcss-2.2.4.tgz#c3bca7d265e608ffc50a6d1a4932b5b53be14553"
+  integrity sha512-8mIk+0BoReKiaBI4e3hjaz9YDQto+rdZ2eEExHf6AfS38FZcALQ6s8mTd+74N8BtBaLnTzLdNe5GbkzObWlSXw==
+
 "@types/through@*":
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/through/-/through-0.0.30.tgz#e0e42ce77e897bd6aead6f6ea62aeb135b8a3895"
@@ -2183,6 +2188,18 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
+autoprefixer@^10.4.0:
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.0.tgz#c3577eb32a1079a440ec253e404eaf1eb21388c8"
+  integrity sha512-7FdJ1ONtwzV1G43GDD0kpVMn/qbiNqyOPMFTX5nRffI+7vgWoFEc6DcXOxHJxrWNDXrZh18eDsZjvZGUljSRGA==
+  dependencies:
+    browserslist "^4.17.5"
+    caniuse-lite "^1.0.30001272"
+    fraction.js "^4.1.1"
+    normalize-range "^0.1.2"
+    picocolors "^1.0.0"
+    postcss-value-parser "^4.1.0"
+
 axios@^0.21.4:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
@@ -2464,6 +2481,17 @@ browserslist@^4.16.6, browserslist@^4.17.0:
     escalade "^3.1.1"
     node-releases "^1.1.75"
 
+browserslist@^4.17.5:
+  version "4.18.1"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.18.1.tgz#60d3920f25b6860eb917c6c7b185576f4d8b017f"
+  integrity sha512-8ScCzdpPwR2wQh8IT82CA2VgDwjHyqMovPBZSNH54+tm4Jk2pCuv90gmAdH6J84OCRWi0b4gMe6O6XPXuJnjgQ==
+  dependencies:
+    caniuse-lite "^1.0.30001280"
+    electron-to-chromium "^1.3.896"
+    escalade "^3.1.1"
+    node-releases "^2.0.1"
+    picocolors "^1.0.0"
+
 bs-logger@0.x:
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/bs-logger/-/bs-logger-0.2.6.tgz#eb7d365307a72cf974cc6cda76b68354ad336bd8"
@@ -2581,6 +2609,11 @@ caniuse-lite@^1.0.30001254:
   version "1.0.30001257"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001257.tgz#150aaf649a48bee531104cfeda57f92ce587f6e5"
   integrity sha512-JN49KplOgHSXpIsVSF+LUyhD8PUp6xPpAXeRrrcBh4KBeP7W864jHn6RvzJgDlrReyeVjMFJL3PLpPvKIxlIHA==
+
+caniuse-lite@^1.0.30001272, caniuse-lite@^1.0.30001280:
+  version "1.0.30001283"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001283.tgz#8573685bdae4d733ef18f78d44ba0ca5fe9e896b"
+  integrity sha512-9RoKo841j1GQFSJz/nCXOj0sD7tHBtlowjYlrqIUS812x9/emfBLBt6IyMz1zIaYc/eRL8Cs6HPUVi2Hzq4sIg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -3442,6 +3475,11 @@ electron-to-chromium@^1.3.830:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.842.tgz#641e414012dded277468892c0156cb01984f4f6f"
   integrity sha512-P/nDMPIYdb2PyqCQwhTXNi5JFjX1AsDVR0y6FrHw752izJIAJ+Pn5lugqyBq4tXeRSZBMBb2ZGvRGB1djtELEQ==
 
+electron-to-chromium@^1.3.896:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.5.tgz#912e8fd1645edee2f0f212558f40916eb538b1f9"
+  integrity sha512-YKaB+t8ul5crdh6OeqT2qXdxJGI0fAYb6/X8pDIyye+c3a7ndOCk5gVeKX+ABwivCGNS56vOAif3TN0qJMpEHw==
+
 emittery@^0.7.1:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/emittery/-/emittery-0.7.2.tgz#25595908e13af0f5674ab419396e2fb394cdfa82"
@@ -4136,6 +4174,11 @@ form-data@^3.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
+
+fraction.js@^4.1.1:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.1.2.tgz#13e420a92422b6cf244dff8690ed89401029fbe8"
+  integrity sha512-o2RiJQ6DZaR/5+Si0qJUIy637QMRudSi9kU/FFzx9EZazrIdnBgpU+3sEWCxAVhH2RtxW2Oz+T4p2o8uOPVcgA==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -6733,6 +6776,11 @@ node-releases@^1.1.75:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.75.tgz#6dd8c876b9897a1b8e5a02de26afa79bb54ebbfe"
   integrity sha512-Qe5OUajvqrqDSy6wrWFmMwfJ0jVgwiw4T3KqmbTcZ62qW0gQkheXYhcFM1+lOVcGUoRxcEcfyvFMAnDgaF1VWw==
 
+node-releases@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.1.tgz#3d1d395f204f1f2f29a54358b9fb678765ad2fc5"
+  integrity sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==
+
 node-replace@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/node-replace/-/node-replace-0.3.3.tgz#f21f277554cd264935313f41d288bab628f85235"
@@ -6786,6 +6834,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+normalize-range@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
+  integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
 normalize-svg-path@^1.0.1:
   version "1.1.0"
@@ -7301,7 +7354,7 @@ postcss-value-parser@^4.1.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^8.1.6, postcss@^8.3.5:
+postcss@^8.1.6, postcss@^8.3.5, postcss@^8.4.4:
   version "8.4.4"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.4.tgz#d53d4ec6a75fd62557a66bb41978bf47ff0c2869"
   integrity sha512-joU6fBsN6EIer28Lj6GDFoC/5yOZzLCfn0zHAn/MYXI7aPt4m4hK5KC5ovEZXy+lnCjmYIbQWngvju2ddyEr8Q==
@@ -8767,7 +8820,7 @@ table@^6.0.9:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
 
-tailwindcss@^2.0.0:
+tailwindcss@^2.0.0, tailwindcss@^2.2.19:
   version "2.2.19"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.2.19.tgz#540e464832cd462bb9649c1484b0a38315c2653c"
   integrity sha512-6Ui7JSVtXadtTUo2NtkBBacobzWiQYVjYW0ZnKaP9S1ZCKQ0w7KVNz+YSDI/j7O7KCMHbOkz94ZMQhbT9pOqjw==
