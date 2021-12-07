@@ -10,7 +10,7 @@ KittenApp is React Native application. This project is configured with redux, re
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [React Navigation 6](https://reactnavigation.org/) theming support.
 - [React Native Gesture Handler](https://github.com/kmagiera/react-native-gesture-handler)
-- [Shopify restyle](https://github.com/Shopify/restyle) - library for building UI libraries with theming support
+- [Tailwind Css React Native](https://www.npmjs.com/package/tailwind-react-native-classnames) - TailwindCSS + React Native, written in TypeScript
 - [Redux](http://redux.js.org/) with [hooks](https://react-redux.js.org/api/hooks) support
 - [Redux Persist](https://github.com/rt2zz/redux-persist/)
 - [Axios](https://github.com/axios/axios)
@@ -22,6 +22,28 @@ KittenApp is React Native application. This project is configured with redux, re
 - [Node](https://nodejs.org) v10 (it is recommended to install it via [NVM](https://github.com/creationix/nvm))
 - [Yarn](https://yarnpkg.com/)
 - A development machine set up for React Native by following [these instructions](https://facebook.github.io/react-native/docs/getting-started.html)
+
+# Tailwind intellisense
+
+```js
+// vs code setting.json
+  "tailwindCSS.experimental.classRegex": [
+    ["tw\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tw1\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tw2\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tw3\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // suggection for props name include  Cls="bg-blue-700"
+    ["Cls=[\"'`]([^\"'`]*)"],
+    ["Clx=[\"'`]([^\"'`]*)"],
+    ["className:.[\"'`]([^\"'`]*)"],
+    ["className:[\"'`]([^\"'`]*)"],
+    ["className:.clx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    "tw`([^`]*)",
+    "tw\\.style\\(`([^)]*)`\\)",
+    "tw\\.style\\(`([^)]*)\\)",
+    "twColor\\(`([^)]*)`\\)"
+  ],
+```
 
 ## Getting Started
 
@@ -39,23 +61,3 @@ KittenApp is React Native application. This project is configured with redux, re
      - Hit `Run` after selecting the desired device
 
 6. Enjoy!!!
-
-## Demo Feature
-
-- Have two screen:
-  - KittenList: List with random kitten images with randomly generated names.
-  - KittenItem: view kitten detail
-- KittenList Screen:
-  - On application startup all images retrieved from kitten API then combine with randomly name and description with loading indicator while images are being fetched to display in list is empty will show empty message.
-  - User can filter number to displayed kitten list (30/50/100)
-  - Show Online/Offline on Header right
-  - Show specific count specify count of displayed kitten items in header with title
-- KittenItem Screen:
-
-  - header with go back and title
-  - in Kitten item screen render kitten image at the top followed by it’s name and display kitten description below (Lorem Ipsum).
-
-- BONUS
-  - Generate signed .apk file, release version in root folder: [app-release.apk](https://github.com/rimsila/kitten-app/blob/main/app-release.apk)
-  - Write tests for some react-native component and utils
-  - Store kitten data in redux state and support offline mode and auto refetch when online

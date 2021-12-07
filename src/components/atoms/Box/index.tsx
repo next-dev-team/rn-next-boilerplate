@@ -1,6 +1,13 @@
 import React, { ReactNode } from 'react';
-import { StyleProp, TouchableOpacity, TouchableOpacityProps, View, ViewProps, ViewStyle } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import {
+  ScrollView,
+  StyleProp,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewProps,
+  ViewStyle,
+} from 'react-native';
 import { tw } from 'utils';
 
 type IBoxVariant = 'touchOpacity' | 'view' | 'scroll';

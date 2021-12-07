@@ -2,8 +2,7 @@ import { StackNavigationOptions } from '@react-navigation/stack';
 import { Box, Image } from 'components/atoms';
 import SvgIcon from 'components/atoms/svg-icon';
 import React, { useState } from 'react';
-import { ColorSchemeName } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { ColorSchemeName, TextInput } from 'react-native';
 import { tw, twColor } from 'utils';
 
 const RenderOption = () => {
