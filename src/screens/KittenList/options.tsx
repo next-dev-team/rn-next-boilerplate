@@ -15,7 +15,7 @@ const RenderOption = () => {
   return (
     <>
       {/* ============= tailwind style ========= */}
-      <Box className="px-4 pt-4 flex-row justify-between items-center mb-4">
+      <Box className="px-4 pt-4 flex-row justify-between items-center mb-4 ios:mt-8">
         <Box className="flex-1 flex-row items-center border border-gray-200 rounded-full shadow-md bg-white dark:bg-gray-600 px-4 h-11">
           <SvgIcon name="search" color={twColor(`bg-green-400`)} size={24} />
           <TextInput
