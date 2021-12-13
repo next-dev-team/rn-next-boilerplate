@@ -1,17 +1,14 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
 import { Box, Image } from 'components/atoms';
 import SvgIcon from 'components/atoms/svg-icon';
-import React, { useState } from 'react';
-import { ColorSchemeName, TextInput } from 'react-native';
+import React from 'react';
+import { TextInput } from 'react-native';
+import { useSettingsStore } from 'store/settings/useSettingsStore';
 import { tw, twColor } from 'utils';
 
 const RenderOption = () => {
-  const [dark, setDark] = useState<ColorSchemeName>('dark');
+  const { colorScheme, setColorScheme } = useSettingsStore();
 
-  const toggleDark = () => {
-    tw.setColorScheme(dark);
-    setDark(dark === 'light' ? 'dark' : 'light');
-  };
   return (
     <>
       {/* ============= tailwind style ========= */}
@@ -21,15 +18,19 @@ const RenderOption = () => {
           <TextInput
             style={tw`ml-1 dark:text-white`}
             placeholder="Search..."
-            placeholderTextColor={dark === 'light' ? twColor(`bg-white`) : twColor(`bg-black`)}
+            placeholderTextColor={colorScheme === 'light' ? twColor(`bg-gray-400`) : twColor(`bg-white`)}
             underlineColorAndroid="transparent"
           />
         </Box>
-        {dark === 'dark' ? (
-          <SvgIcon onPress={toggleDark} name="day" color={twColor(`bg-yellow-400`)} size={28} style={tw`mx-3`} />
-        ) : (
-          <SvgIcon onPress={toggleDark} name="night" color={twColor(`bg-black`)} size={28} style={tw`mx-3`} />
-        )}
+        <Box
+          touchOpacity
+          onPress={() => {
+            setColorScheme(colorScheme === 'light' ? 'dark' : 'light');
+          }}
+        >
+          <SvgIcon name="day" color={twColor(`bg-yellow-400`)} size={38} style={tw`mx-3`} />
+        </Box>
+
         <Image
           className="h-10 w-10 rounded-full border border-gray-300"
           src="https://thecodingcompany.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1630913458778%2FvlDkZyXQc.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75"
