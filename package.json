@@ -2,6 +2,7 @@
   "name": "kitten",
   "version": "0.0.1",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "eslint": "eslint --fix --ext .ts,.tsx src/",
     "prettier": "prettier --check src/**/*.tsx --write",
@@ -52,6 +53,7 @@
     "ahooks": "^2.10.9",
     "autoprefixer": "^10.4.0",
     "axios": "^0.21.4",
+    "hookstate-persist": "^1.0.2",
     "i18next": "^21.0.1",
     "lodash": "^4.17.21",
     "postcss": "^8.4.4",

@@ -1,9 +1,8 @@
+const color = require('tailwindcss/colors');
+
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
  */
-const pxToRem = px => {
-  return `${px / 16}rem`;
-};
 
 module.exports = {
   mode: 'jit',
@@ -13,7 +12,7 @@ module.exports = {
     extend: {
       minHeight: {},
       colors: {
-        primary: '#8257E5',
+        primary: color.green[400],
         success: '#1DB863',
         black: '#666666',
         dark: '#B2B2B2',

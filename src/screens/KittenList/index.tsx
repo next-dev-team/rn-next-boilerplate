@@ -5,10 +5,12 @@ import { useSettingsStore } from 'store/settings/useSettingsStore';
 import { twColor } from 'utils';
 
 const KittenListScreen = () => {
-  const { colorScheme, setColorScheme, setCounter, counter } = useSettingsStore();
+  const { setCounter, counter } = useSettingsStore();
+
+  console.log('counter', counter);
 
   return (
-    <Box className="p-4 dark:bg-red-500">
+    <Box className="p-4">
       <Box>
         <Image
           className="h-44 rounded-xl mb-4 w-full"

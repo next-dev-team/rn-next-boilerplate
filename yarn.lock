@@ -926,7 +926,7 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hookstate/core@^3.0.13":
+"@hookstate/core@^3.0.13", "@hookstate/core@^3.0.4":
   version "3.0.13"
   resolved "https://registry.yarnpkg.com/@hookstate/core/-/core-3.0.13.tgz#827c92166399cd4ae227d3c7ae76445e388ce3e8"
   integrity sha512-dzx6Rz1M5/c/F1zPEspnONMUvkJD1BzepuuGkqoh+KDNhgWrklGW9OVQAuK+DZFyamCTb3/1GW2Vu4IDhXMexA==
@@ -4552,6 +4552,13 @@ homedir-polyfill@^1.0.1:
   integrity sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==
   dependencies:
     parse-passwd "^1.0.0"
+
+hookstate-persist@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hookstate-persist/-/hookstate-persist-1.0.2.tgz#9c1b9282a5ea8a777f51c20c87bfd0623428043d"
+  integrity sha512-+AdsjOSWlJIPeXyN4622Zt8tE5ynz1PkZ9xbdmxoztjgReMUp0rWZ3I/KTnSunWnAYAM3UkDHpakcuSt2dbscA==
+  dependencies:
+    "@hookstate/core" "^3.0.4"
 
 hosted-git-info@^2.1.4:
   version "2.8.9"

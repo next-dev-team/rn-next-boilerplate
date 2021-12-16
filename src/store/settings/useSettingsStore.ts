@@ -1,4 +1,4 @@
-import { createState, useState } from '@hookstate/core';
+import { createStatePersist, usePersistStore } from 'plugins';
 import { tw } from 'utils';
 
 type IInitStore = {
@@ -6,21 +6,26 @@ type IInitStore = {
 };
 
 const initStore = {
-  colorScheme: 'light' as IInitStore['colorScheme'],
   counter: 1,
 };
 
-const store = createState(initStore);
+type IStore = IInitStore & typeof initStore;
+type IStoreKey = keyof IStore;
+
+const store = createStatePersist<IStore>({
+  colorScheme: 'light',
+  ...initStore,
+});
 
 export function useSettingsStore() {
-  /**
-   * with hookstate
-   */
-  const state = useState(store);
+  const { state } = usePersistStore<IStoreKey, IStore>({
+    key: 'useSettingsStore',
+    store,
+    whitelist: ['counter', 'colorScheme'],
+  });
 
   const setColorScheme = (colorScheme: IInitStore['colorScheme'] = 'light') => {
     tw.setColorScheme(colorScheme as any);
-
     const theme = {
       dark: 'dark',
       light: 'light',
@@ -33,7 +38,9 @@ export function useSettingsStore() {
     setCounter: (by = 1) => {
       state.counter.set(p => p + by);
     },
-    counter: state.counter.get(),
+    get counter() {
+      return state.counter.get();
+    },
     setColorScheme,
     get colorScheme() {
       return state.colorScheme.get();

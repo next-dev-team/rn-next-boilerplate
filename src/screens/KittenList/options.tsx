@@ -8,7 +8,8 @@ import { tw, twColor } from 'utils';
 
 const RenderOption = () => {
   const { colorScheme, setColorScheme } = useSettingsStore();
-  console.log('dd', twColor(`bg-green-400`));
+
+  console.log('colorScheme', colorScheme);
 
   return (
     <>
@@ -19,7 +20,7 @@ const RenderOption = () => {
           <TextInput
             style={tw`ml-1 dark:text-white`}
             placeholder="Search..."
-            placeholderTextColor={colorScheme === 'light' ? twColor(`text-gray-400`) : twColor(`text-white`)}
+            placeholderTextColor={twColor(`dark:text-white text-gray-400`)}
             underlineColorAndroid="transparent"
           />
         </Box>
@@ -29,12 +30,7 @@ const RenderOption = () => {
             setColorScheme(colorScheme === 'light' ? 'dark' : 'light');
           }}
         >
-          <SvgIcon
-            name="day"
-            color={twColor(`${colorScheme === 'light' ? 'bg-black' : `bg-yellow-500`}`)}
-            size={38}
-            style={tw`mx-3`}
-          />
+          <SvgIcon name="day" color={twColor(`bg-black dark:bg-yellow-500`)} size={38} style={tw`mx-3`} />
         </Box>
 
         <Image
