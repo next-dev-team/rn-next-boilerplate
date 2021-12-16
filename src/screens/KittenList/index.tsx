@@ -8,8 +8,8 @@ const KittenListScreen = () => {
   const { colorScheme, setColorScheme, setCounter, counter } = useSettingsStore();
 
   return (
-    <Box className="p-4">
-      <Box touchOpacity onPress={() => setColorScheme(colorScheme === 'light' ? 'dark' : 'light')}>
+    <Box className="p-4 dark:bg-red-500">
+      <Box>
         <Image
           className="h-44 rounded-xl mb-4 w-full"
           src="https://thecodingcompany.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1630913458778%2FvlDkZyXQc.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75"

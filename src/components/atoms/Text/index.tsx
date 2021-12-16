@@ -1,3 +1,4 @@
+import { useCreation } from 'ahooks';
 import React, { ReactNode } from 'react';
 import { StyleProp, Text as RnText, TextProps, TextStyle } from 'react-native';
 import { tw } from 'utils';
@@ -9,8 +10,10 @@ type IText = {
 } & TextProps;
 
 const Text = ({ children, className = '', style, ...rest }: IText) => {
+  const twStyle = useCreation(() => [tw.style(`${className}`), style], []);
+
   return (
-    <RnText style={[tw.style(` ${className}`), style]} {...rest}>
+    <RnText style={twStyle} {...rest}>
       {children}
     </RnText>
   );

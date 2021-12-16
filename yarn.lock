@@ -9056,10 +9056,10 @@ tsutils@^3.17.1:
   dependencies:
     tslib "^1.8.1"
 
-twrnc@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/twrnc/-/twrnc-2.1.1.tgz#1a699543ebd2305896c78c907a27b0e276f8bfb6"
-  integrity sha512-75QRwAq6ouKAvbZznaKnvzPrOoPXOXNJIW++q/R7+aAVj5n3WSAidEVlBVsYxbedoBGWufgcMf7G8tB29ll1Pw==
+twrnc@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/twrnc/-/twrnc-2.2.0.tgz#2655917b4647ffe543554eb92144fae77db77957"
+  integrity sha512-JCl6+7BTH+qiZ6R2QL+qWFPLgD2Z7sE02f8kthzMSlYFINlUZRBKxZS/QUnYeGXYmJHqR9B+bO/cYg6ioHi1rg==
   dependencies:
     tailwindcss "^2.0.0"
 
