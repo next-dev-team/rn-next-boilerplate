@@ -1,4 +1,4 @@
-import env from 'env';
+import env from '_app/env';
 
 export const apiUrl = {
   baseUrl: env.API_URL,

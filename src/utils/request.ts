@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { apiUrl } from 'constants/http';
+import { apiUrl } from '_app/constants/http';
 
 // };
 

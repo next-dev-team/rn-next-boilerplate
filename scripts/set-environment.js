@@ -23,4 +23,4 @@ const content = `
 export default ${JSON.stringify(envVars, undefined, 2)};
 `;
 
-fs.writeFileSync('src/env.js', content);
+fs.writeFileSync('src/env.ts', content);
