@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
-import { AppThunkOption, RootState } from 'store/store';
-import { request } from 'utils/request';
+import { AppThunkOption, RootState } from '_app/store/store';
+import { request } from '_app/utils/request';
 
 export interface PostSlice {
   postStatus: 'idle' | 'loading' | 'failed' | 'success';

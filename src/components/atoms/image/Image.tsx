@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import FastImage, { FastImageProps } from 'react-native-fast-image';
-import { tw } from 'utils';
+import { tw } from '_app/utils';
 
 type IImage = {
   children?: ReactNode;

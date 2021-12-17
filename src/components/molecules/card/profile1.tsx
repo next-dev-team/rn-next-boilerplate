@@ -1,5 +1,5 @@
-import { Box, Image, Text } from 'components/atoms';
 import React from 'react';
+import { Box, Image, Text } from '_app/components/atoms';
 
 const Profile1 = () => {
   return (

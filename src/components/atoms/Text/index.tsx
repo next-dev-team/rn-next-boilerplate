@@ -1,7 +1,7 @@
 import { useCreation } from 'ahooks';
 import React, { ReactNode } from 'react';
 import { StyleProp, Text as RnText, TextProps, TextStyle } from 'react-native';
-import { tw } from 'utils';
+import { tw } from '_app/utils';
 
 type IText = {
   children: ReactNode;

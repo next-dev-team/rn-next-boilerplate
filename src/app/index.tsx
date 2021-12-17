@@ -1,15 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
-import 'i18n/index';
-import { navigationRef } from 'navigation/NavigationService';
 import React, { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { useSettingsStore } from 'store/settings/useSettingsStore';
-import { persistor, store } from 'store/store';
 import { useAppColorScheme, useDeviceContext } from 'twrnc';
-import { tw } from 'utils/tailwind';
-import AppNavigation from '../navigation/AppNavigation';
+import '_app/i18n/index';
+import AppNavigation from '_app/navigation/AppNavigation';
+import { navigationRef } from '_app/navigation/NavigationService';
+import { useSettingsStore } from '_app/store/settings/useSettingsStore';
+import { persistor, store } from '_app/store/store';
+import { tw } from '_app/utils/tailwind';
 
 const App = () => {
   useDeviceContext(tw, { withDeviceColorScheme: false });

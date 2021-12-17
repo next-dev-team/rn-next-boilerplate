@@ -1,6 +1,6 @@
-import { CusBox, CusText } from 'components/atoms';
 import React, { ReactNode } from 'react';
 import { TouchableOpacity } from 'react-native';
+import { CusBox, CusText } from '_app/components/atoms';
 
 export type ButtonProps = React.ComponentProps<typeof CusBox> & {
   onPress?: () => void;

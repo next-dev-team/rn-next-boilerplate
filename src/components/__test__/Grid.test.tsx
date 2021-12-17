@@ -1,7 +1,7 @@
-import { CusText } from 'components';
-import GridView from 'components/List/GridView';
 import React from 'react';
 import { render } from 'test/test-utils';
+import { CusText } from '_app/components';
+import GridView from '_app/components/List/GridView';
 
 describe('<GridView />', () => {
   it('should match snapshot', () => {

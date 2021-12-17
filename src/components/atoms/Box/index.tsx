@@ -8,7 +8,7 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import { tw } from 'utils';
+import { tw } from '_app/utils';
 
 type IBoxVariant = 'touchOpacity' | 'view' | 'scroll';
 export type IBox = {

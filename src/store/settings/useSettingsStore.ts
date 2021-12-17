@@ -1,5 +1,5 @@
-import { createStatePersist, usePersistStore } from 'plugins';
-import { tw } from 'utils';
+import { createStatePersist, usePersistStore } from '_app/plugins';
+import { tw } from '_app/utils';
 
 type IInitStore = {
   colorScheme: 'dark' | 'light' | 'system';

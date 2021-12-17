@@ -1,7 +1,7 @@
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { KittenList, KittenListOption } from 'screens';
-import { tw } from 'utils';
+import { KittenList, KittenListOption } from '_app/screens';
+import { tw } from '_app/utils';
 
 const Stack = createStackNavigator<AppStackParams>();
 

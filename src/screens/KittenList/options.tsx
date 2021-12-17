@@ -1,10 +1,10 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
-import { Box, Image } from 'components/atoms';
-import SvgIcon from 'components/atoms/svg-icon';
 import React from 'react';
 import { TextInput } from 'react-native';
-import { useSettingsStore } from 'store/settings/useSettingsStore';
-import { tw, twColor } from 'utils';
+import { Box, Image } from '_app/components/atoms';
+import SvgIcon from '_app/components/atoms/svg-icon';
+import { useSettingsStore } from '_app/store/settings/useSettingsStore';
+import { tw, twColor } from '_app/utils';
 
 const RenderOption = () => {
   const { colorScheme, setColorScheme } = useSettingsStore();

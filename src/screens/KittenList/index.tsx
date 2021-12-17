@@ -1,8 +1,8 @@
-import { Box, Image, Text } from 'components/atoms';
-import SvgIcon from 'components/atoms/svg-icon';
 import React from 'react';
-import { useSettingsStore } from 'store/settings/useSettingsStore';
-import { twColor } from 'utils';
+import { Box, Image, Text } from '_app/components/atoms';
+import SvgIcon from '_app/components/atoms/svg-icon';
+import { useSettingsStore } from '_app/store/settings/useSettingsStore';
+import { twColor } from '_app/utils';
 
 const KittenListScreen = () => {
   const { setCounter, counter } = useSettingsStore();

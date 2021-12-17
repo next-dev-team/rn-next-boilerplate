@@ -1,8 +1,8 @@
-import { CusBox } from 'components';
 import React from 'react';
 import 'react-native';
 import { render } from 'test/test-utils';
 import { colorsTheme } from 'themes';
+import { CusBox } from '_app/components';
 
 describe('<CusBox />', () => {
   it('should match snapshot', () => {
