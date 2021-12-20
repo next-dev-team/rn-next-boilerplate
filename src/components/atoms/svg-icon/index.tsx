@@ -7,6 +7,7 @@ import { GProps } from 'react-native-svg';
 import IconArrowdown from './IconArrowdown';
 import IconBells from './IconBells';
 import IconBookmark from './IconBookmark';
+import IconCambodiaCircle from './IconCambodiaCircle';
 import IconCheck from './IconCheck';
 import IconCheckcircle from './IconCheckcircle';
 import IconCheckcircleo from './IconCheckcircleo';
@@ -33,11 +34,13 @@ import IconShare from './IconShare';
 import IconUp from './IconUp';
 import IconUser from './IconUser';
 
-export type IconNames = 'arrowdown' | 'bells' | 'bookmark' | 'check' | 'checkcircle' | 'checkcircleo' | 'clockcircleo' | 'close' | 'closecircleo' | 'date' | 'day' | 'down' | 'ellipsis' | 'eyeclose' | 'eyeopen' | 'language' | 'left' | 'minus' | 'night' | 'plus' | 'radio-checked' | 'radio-unchecked' | 'reload' | 'right' | 'search' | 'share' | 'up' | 'user';
+export type IconNames = 'arrowdown' | 'bells' | 'bookmark' | 'cambodia_circle' | 'check' | 'checkcircle' | 'checkcircleo' | 'clockcircleo' | 'close' | 'closecircleo' | 'date' | 'day' | 'down' | 'ellipsis' | 'eyeclose' | 'eyeopen' | 'language' | 'left' | 'minus' | 'night' | 'plus' | 'radio-checked' | 'radio-unchecked' | 'reload' | 'right' | 'search' | 'share' | 'up' | 'user';
 
 export interface SvgIconProps extends GProps, ViewProps {
   name: IconNames;
   size?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string | string[];
 }
 
@@ -49,6 +52,8 @@ let SvgIcon: FC<SvgIconProps> = ({ name, ...rest }) => {
       return <IconBells {...rest} />;
     case 'bookmark':
       return <IconBookmark {...rest} />;
+    case 'cambodia_circle':
+      return <IconCambodiaCircle {...rest} />;
     case 'check':
       return <IconCheck {...rest} />;
     case 'checkcircle':

@@ -9,10 +9,12 @@ import { px } from '../helpers/normalize';
 
 export interface SvgIconProps extends GProps, ViewProps {
   size?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string | string[];
 }
 
-let IconEyeclose: FC<SvgIconProps> = ({ size, color, ...rest }) => {
+let IconEyeclose: FC<SvgIconProps> = ({ size, width = size, height = size, color, ...rest }) => {
   const xml = `
 <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9996 9.72168C10.6623 9.72168 9.5856 10.7984 9.5856 12.1377C9.5856 12.8053 9.85048 13.3967 10.2905 13.8359C10.5836 14.1285 10.584 14.6034 10.2914 14.8965C9.99876 15.1897 9.52388 15.1901 9.23073 14.8975C8.52072 14.1887 8.0856 13.22 8.0856 12.1377C8.0856 9.97093 9.83293 8.22168 11.9996 8.22168C13.0699 8.22168 14.0598 8.65501 14.7641 9.37056C15.0547 9.66575 15.0509 10.1406 14.7557 10.4312C14.4605 10.7218 13.9857 10.718 13.6951 10.4228C13.2694 9.99035 12.6633 9.72168 11.9996 9.72168Z" fill="${getIconColor(color, 0, '#999999')}"/>
@@ -24,7 +26,7 @@ let IconEyeclose: FC<SvgIconProps> = ({ size, color, ...rest }) => {
 `
 
   return (
-    <SvgXml xml={xml}  width={size} height={size} {...rest} />
+    <SvgXml xml={xml}  width={width} height={height} {...rest} />
   );
 };
 

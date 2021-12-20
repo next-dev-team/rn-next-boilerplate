@@ -9,10 +9,12 @@ import { px } from '../helpers/normalize';
 
 export interface SvgIconProps extends GProps, ViewProps {
   size?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string | string[];
 }
 
-let IconClockcircleo: FC<SvgIconProps> = ({ size, color, ...rest }) => {
+let IconClockcircleo: FC<SvgIconProps> = ({ size, width = size, height = size, color, ...rest }) => {
   const xml = `
 <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9998 3.50049C7.305 3.50049 3.49979 7.3057 3.49979 12.0005C3.49979 16.6953 7.305 20.5005 11.9998 20.5005C16.6946 20.5005 20.4998 16.6953 20.4998 12.0005C20.4998 7.3057 16.6946 3.50049 11.9998 3.50049ZM1.99979 12.0005C1.99979 6.47727 6.47657 2.00049 11.9998 2.00049C17.523 2.00049 21.9998 6.47727 21.9998 12.0005C21.9998 17.5237 17.523 22.0005 11.9998 22.0005C6.47657 22.0005 1.99979 17.5237 1.99979 12.0005Z" fill="${getIconColor(color, 0, '#999999')}"/>
@@ -21,7 +23,7 @@ let IconClockcircleo: FC<SvgIconProps> = ({ size, color, ...rest }) => {
 `
 
   return (
-    <SvgXml xml={xml}  width={size} height={size} {...rest} />
+    <SvgXml xml={xml}  width={width} height={height} {...rest} />
   );
 };
 

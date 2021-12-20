@@ -16,7 +16,7 @@ i18n
 
     ns: ['common'],
     defaultNS: 'common',
-
+    compatibilityJSON: 'v3',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },

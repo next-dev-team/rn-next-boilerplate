@@ -35,7 +35,7 @@ export function useSettingsStore() {
   };
 
   return {
-    setCounter: (by = 1) => {
+    setsetCounter: (by = 1) => {
       state.counter.set(p => p + by);
     },
     get counter() {

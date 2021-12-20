@@ -9,10 +9,12 @@ import { px } from '../helpers/normalize';
 
 export interface SvgIconProps extends GProps, ViewProps {
   size?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string | string[];
 }
 
-let IconSearch: FC<SvgIconProps> = ({ size, color, ...rest }) => {
+let IconSearch: FC<SvgIconProps> = ({ size, width = size, height = size, color, ...rest }) => {
   const xml = `
 <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7666 3.52783C7.21657 3.52783 3.52805 7.21636 3.52805 11.7664C3.52805 16.3164 7.21657 20.0049 11.7666 20.0049C16.3166 20.0049 20.0052 16.3164 20.0052 11.7664C20.0052 7.21636 16.3166 3.52783 11.7666 3.52783ZM2.02805 11.7664C2.02805 6.38793 6.38815 2.02783 11.7666 2.02783C17.1451 2.02783 21.5052 6.38793 21.5052 11.7664C21.5052 17.1448 17.1451 21.5049 11.7666 21.5049C6.38815 21.5049 2.02805 17.1448 2.02805 11.7664Z" fill="${getIconColor(color, 0, '#999999')}"/>
@@ -21,7 +23,7 @@ let IconSearch: FC<SvgIconProps> = ({ size, color, ...rest }) => {
 `
 
   return (
-    <SvgXml xml={xml}  width={size} height={size} {...rest} />
+    <SvgXml xml={xml}  width={width} height={height} {...rest} />
   );
 };
 

@@ -9,10 +9,12 @@ import { px } from '../helpers/normalize';
 
 export interface SvgIconProps extends GProps, ViewProps {
   size?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string | string[];
 }
 
-let IconArrowdown: FC<SvgIconProps> = ({ size, color, ...rest }) => {
+let IconArrowdown: FC<SvgIconProps> = ({ size, width = size, height = size, color, ...rest }) => {
   const xml = `
 <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2743 4C12.6885 4 13.0243 4.33579 13.0243 4.75V19.75C13.0243 20.1642 12.6885 20.5 12.2743 20.5C11.8601 20.5 11.5243 20.1642 11.5243 19.75V4.75C11.5243 4.33579 11.8601 4 12.2743 4Z" fill="${getIconColor(color, 0, '#999999')}"/>
@@ -21,7 +23,7 @@ let IconArrowdown: FC<SvgIconProps> = ({ size, color, ...rest }) => {
 `
 
   return (
-    <SvgXml xml={xml}  width={size} height={size} {...rest} />
+    <SvgXml xml={xml}  width={width} height={height} {...rest} />
   );
 };
 

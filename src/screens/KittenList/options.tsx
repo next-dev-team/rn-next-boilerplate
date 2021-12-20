@@ -1,7 +1,7 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
 import React from 'react';
 import { TextInput } from 'react-native';
-import { Box, Image } from '_app/components/atoms';
+import { Box, Image, Text } from '_app/components/atoms';
 import SvgIcon from '_app/components/atoms/svg-icon';
 import { useSettingsStore } from '_app/store/settings/useSettingsStore';
 import { tw, twColor } from '_app/utils';
@@ -31,6 +31,15 @@ const RenderOption = () => {
           }}
         >
           <SvgIcon name="day" color={twColor(`bg-black dark:bg-yellow-500`)} size={38} style={tw`mx-3`} />
+        </Box>
+        <Box
+          touchOpacity
+          onPress={() => {
+            setColorScheme(colorScheme === 'light' ? 'dark' : 'light');
+          }}
+          className="mr-3"
+        >
+          <Text>Kh</Text>
         </Box>
 
         <Image

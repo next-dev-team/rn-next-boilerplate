@@ -9,10 +9,12 @@ import { px } from '../helpers/normalize';
 
 export interface SvgIconProps extends GProps, ViewProps {
   size?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string | string[];
 }
 
-let IconDate: FC<SvgIconProps> = ({ size, color, ...rest }) => {
+let IconDate: FC<SvgIconProps> = ({ size, width = size, height = size, color, ...rest }) => {
   const xml = `
 <svg width="24" height="24" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.34265 9.4043C2.34265 8.99008 2.67844 8.6543 3.09265 8.6543H20.9166C21.3308 8.6543 21.6666 8.99008 21.6666 9.4043C21.6666 9.81851 21.3308 10.1543 20.9166 10.1543H3.09265C2.67844 10.1543 2.34265 9.81851 2.34265 9.4043Z" fill="${getIconColor(color, 0, '#999999')}"/>
@@ -29,7 +31,7 @@ let IconDate: FC<SvgIconProps> = ({ size, color, ...rest }) => {
 `
 
   return (
-    <SvgXml xml={xml}  width={size} height={size} {...rest} />
+    <SvgXml xml={xml}  width={width} height={height} {...rest} />
   );
 };
 
