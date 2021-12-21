@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box, Image, Text } from '_app/components/atoms';
+import { Box, Image, Text, TextBg } from '_app/components/atoms';
 import SvgIcon from '_app/components/atoms/svg-icon';
 import { useSettingsStore } from '_app/store/settings/useSettingsStore';
-import { twColor } from '_app/utils';
+import { useTailwind } from '_app/store/useTailwind';
 
 const KittenListScreen = () => {
   const { setCounter, counter } = useSettingsStore();
+  const { twColor } = useTailwind();
 
   console.log('counter', counter);
 
@@ -33,9 +34,9 @@ const KittenListScreen = () => {
             setCounter(2);
           }}
         >
-          <Text className="text-white">-</Text>
+          <TextBg>-</TextBg>
         </Box>
-        <Text className="mx-4">{counter}</Text>
+        <Text>{counter}</Text>
         <Box
           className="bg-green-500 rounded-lg px-4 py-2 flex-row justify-center"
           touchOpacity
@@ -43,7 +44,7 @@ const KittenListScreen = () => {
             setCounter(1);
           }}
         >
-          <Text className="text-white">+</Text>
+          <TextBg>+</TextBg>
         </Box>
       </Box>
     </Box>

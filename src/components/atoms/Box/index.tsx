@@ -8,7 +8,7 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import { tw } from '_app/utils';
+import { useTailwind } from '_app/store/useTailwind';
 
 type IBoxVariant = 'touchOpacity' | 'view' | 'scroll';
 export type IBox = {
@@ -30,14 +30,16 @@ const Box = ({
   style,
   ...rest
 }: IBox) => {
+  const { twStyle } = useTailwind();
+
   const viewBox = (
-    <View style={[tw.style(` ${className}`), style]} {...rest}>
+    <View style={[twStyle(`${className}`), style]} {...rest}>
       {children}
     </View>
   );
 
   const scrollViewBox = (
-    <ScrollView style={[tw.style(className), style]} {...rest}>
+    <ScrollView style={[twStyle(className), style]} {...rest}>
       {children}
     </ScrollView>
   );

@@ -13,11 +13,9 @@ module.exports = {
       minHeight: {},
       colors: {
         primary: color.green[400],
-        success: '#1DB863',
-        black: '#666666',
-        dark: '#B2B2B2',
-        light: '#EBEBEB',
-        white: '#FFFFFF',
+        success: color.green[400],
+        dark: color.black,
+        light: color.white,
         gradient: {
           from: 'rgba(196, 196, 196, 0.24)',
           to: 'rgba(196, 196, 196, 0)',

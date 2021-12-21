@@ -2,19 +2,23 @@ import React, { ReactNode } from 'react';
 import { StyleProp, Text as RnText, TextProps, TextStyle } from 'react-native';
 import { useTailwind } from '_app/store/useTailwind';
 
-type IText = {
+type ITextBg = {
   children: ReactNode;
   className?: string;
   style?: StyleProp<TextStyle>;
 } & TextProps;
 
-const Text = ({ children, className = '', style, ...rest }: IText) => {
-  const { twStyle } = useTailwind();
+/**
+ * TextBg will not change text color by default
+ * net to put color manual
+ */
+const TextBg = ({ children, className = '', style, ...rest }: ITextBg) => {
+  const twStyle = useTailwind().twStyle;
 
   return (
-    <RnText style={[twStyle(`text-black dark:text-white ${className}`), style]} {...rest}>
+    <RnText style={[twStyle(`text-white ${className}`), style]} {...rest}>
       {children}
     </RnText>
   );
 };
-export default Text;
+export default TextBg;

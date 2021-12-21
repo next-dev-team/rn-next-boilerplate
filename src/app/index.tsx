@@ -1,37 +1,43 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import { ActivityIndicator } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { useAppColorScheme, useDeviceContext } from 'twrnc';
+import { Box } from '_app/components/atoms';
 import '_app/i18n/index';
 import AppNavigation from '_app/navigation/AppNavigation';
 import { navigationRef } from '_app/navigation/NavigationService';
-import { useSettingsStore } from '_app/store/settings/useSettingsStore';
-import { persistor, store } from '_app/store/store';
-import { tw } from '_app/utils/tailwind';
+import { TailwindProvider, useTailwind } from '_app/store/useTailwind';
+
+const RootApp = ({ ready }: { ready: boolean }) => {
+  const { twColor } = useTailwind();
+  return (
+    <>
+      {ready && (
+        <Box className="h-full w-full bg-primary justify-center items-center">
+          <ActivityIndicator color={twColor('text-white')} size="large" />
+        </Box>
+      )}
+      <AppNavigation />
+    </>
+  );
+};
 
 const App = () => {
-  useDeviceContext(tw, { withDeviceColorScheme: false });
-
-  const [_, toggleColorScheme, setColorSchemeApp] = useAppColorScheme(tw);
-
-  const { colorScheme, setColorScheme } = useSettingsStore();
-
-  useEffect(() => {
-    setColorScheme(colorScheme as any);
-    setColorSchemeApp(colorScheme as any);
-  }, [colorScheme]);
+  const [ready, setReady] = useState(true);
 
   return (
     <SafeAreaProvider>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <NavigationContainer ref={navigationRef} fallback={null}>
-            <AppNavigation />
-          </NavigationContainer>
-        </PersistGate>
-      </Provider>
+      <NavigationContainer
+        ref={navigationRef}
+        fallback={<ActivityIndicator />}
+        onReady={() => {
+          setTimeout(() => {
+            setReady(false);
+          }, 800);
+        }}
+      >
+        <TailwindProvider>{<RootApp ready={ready} />}</TailwindProvider>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 };

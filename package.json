@@ -77,8 +77,8 @@
     "redux-persist": "^6.0.0",
     "tailwindcss": "^2.2.19",
     "twrnc": "^2.2.0",
-    "react-i18next": "^11.15.1",
-    "i18next": "^21.6.3"
+    "react-i18next": "11.11.1",
+    "i18next": "21.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

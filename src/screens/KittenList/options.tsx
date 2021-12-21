@@ -1,28 +1,23 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
 import React from 'react';
-import { TextInput } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { Box, Image, Text } from '_app/components/atoms';
 import SvgIcon from '_app/components/atoms/svg-icon';
 import { useSettingsStore } from '_app/store/settings/useSettingsStore';
-import { tw, twColor } from '_app/utils';
+import { useTailwind } from '_app/store/useTailwind';
 
 const RenderOption = () => {
-  const { colorScheme, setColorScheme } = useSettingsStore();
-
+  const { colorScheme, setColorScheme, currentLocaleKey, setCurrentLocaleKey } = useSettingsStore();
   console.log('colorScheme', colorScheme);
+  const { t } = useTranslation();
+  const { twColor, tw } = useTailwind();
 
   return (
     <>
       {/* ============= tailwind style ========= */}
       <Box className="px-4 pt-4 flex-row justify-between items-center mb-4 ios:mt-8">
         <Box className="flex-1 flex-row items-center border border-gray-200 rounded-full shadow-md bg-white dark:bg-gray-600 px-4 h-11">
-          <SvgIcon name="search" color={twColor(`bg-green-400 dark:bg-yellow-400`)} size={24} />
-          <TextInput
-            style={tw`ml-1 dark:text-white`}
-            placeholder="Search..."
-            placeholderTextColor={twColor(`dark:text-white text-gray-400`)}
-            underlineColorAndroid="transparent"
-          />
+          <Text>{t('settings.currentLanguage', { locale: currentLocaleKey })}</Text>
         </Box>
         <Box
           touchOpacity
@@ -35,11 +30,11 @@ const RenderOption = () => {
         <Box
           touchOpacity
           onPress={() => {
-            setColorScheme(colorScheme === 'light' ? 'dark' : 'light');
+            setCurrentLocaleKey(currentLocaleKey === 'en' ? 'km' : 'en');
           }}
-          className="mr-3"
+          className="mr-3 bg-gray-300 dark:bg-yellow-700 h-9 w-9 rounded-full items-center justify-center border"
         >
-          <Text>Kh</Text>
+          <Text className="uppercase font-bold text-black">{currentLocaleKey}</Text>
         </Box>
 
         <Image

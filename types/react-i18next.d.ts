@@ -1,7 +1,7 @@
-import { resources } from 'i18n/config';
+import { en } from '../src/i18n/locales';
 
 declare module 'react-i18next' {
   interface CustomTypeOptions {
-    resources: typeof resources['en'];
+    resources: { translation: typeof en };
   }
 }

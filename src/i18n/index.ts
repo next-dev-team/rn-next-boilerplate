@@ -1,31 +1,38 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import { defaultLanguage, resources } from './config';
+import i18n, { StringMap, TOptionsBase } from 'i18next';
+import { initReactI18next, TFuncKey } from 'react-i18next';
 import RNLanguageDetector from './detector';
+import * as resources from './locales';
+
+export const defaultI18nKey = 'en';
 
 i18n
-  //@ts-ignore
-  .use(RNLanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
+  .use(RNLanguageDetector as any)
   .init({
-    // debug:  process.env.NODE_ENV === 'development',
+    resources: {
+      ...Object.entries(resources).reduce(
+        (acc, [key, value]) => ({
+          ...acc,
+          [key]: {
+            translation: value,
+          },
+        }),
+        {}
+      ),
+    },
     debug: false,
-    resources: resources,
-    // language to use if translations in user language are not available.
-    fallbackLng: defaultLanguage,
-
-    ns: ['common'],
-    defaultNS: 'common',
-    compatibilityJSON: 'v3',
+    fallbackLng: 'en',
+    // have a common namespace used around the full app
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      escapeValue: false,
     },
-
-    react: {
-      useSuspense: true,
-      // defaultTransParent: Text,
-      transSupportBasicHtmlNodes: false,
-    },
+    defaultNS: 'translation',
+    ns: ['translation'],
+    compatibilityJSON: 'v3',
   });
+
+export { resources };
+export type { StringMap, TOptionsBase, TFuncKey, I18nKey };
+type I18nKey = keyof typeof resources;
 
 export default i18n;
