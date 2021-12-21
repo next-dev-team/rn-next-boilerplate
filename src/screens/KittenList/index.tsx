@@ -28,7 +28,7 @@ const KittenListScreen = () => {
       </Box>
       <Box className="h-20 flex-row flex justify-center items-center">
         <Box
-          className="bg-yellow-500 rounded-lg px-4 py-2 flex-row justify-center"
+          className="bg-yellow-500 rounded-full px-6 py-4 flex-row justify-center"
           touchOpacity
           onPress={() => {
             setCounter(2);
@@ -36,9 +36,9 @@ const KittenListScreen = () => {
         >
           <TextBg>-</TextBg>
         </Box>
-        <Text>{counter}</Text>
+        <Text className="mx-4">{counter}</Text>
         <Box
-          className="bg-green-500 rounded-lg px-4 py-2 flex-row justify-center"
+          className="bg-green-500 rounded-full px-6 py-4 flex-row justify-center"
           touchOpacity
           onPress={() => {
             setCounter(1);
