@@ -1,4 +1,4 @@
-import { convertToHttps } from '_app/utils/string';
+import { convertToHttps } from '_app/utils/js/string';
 
 const url = 'http:';
 

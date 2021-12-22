@@ -1542,7 +1542,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@td-design/svgicon-cli@^1.1.4":
+"@td-design/svgicon-cli@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@td-design/svgicon-cli/-/svgicon-cli-1.5.0.tgz#2ac35d53bf9a247f9e741b3e16a42cf4d85c748d"
   integrity sha512-rjOkhKtoM3bshvRY4jWb7a1/jtvFYDs0UzKByyrT1o6gRojkvLELvsSl/27DYmlROEVyqjMVUcW6xcRnFZntBg==
@@ -1729,6 +1729,11 @@
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.1.tgz#88d501e84b6185f6489ecee4ba9e8fcec7f29bb2"
   integrity sha512-NXKvBVUzIbs6ylBwmOwHFkZS2EXCcjnqr8ZCRNaXBkHAf+3mn/rPcJxwrzuc6movh8fxQAsUUfYklJ/EG+hZqQ==
+
+"@types/node@^17.0.2":
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.2.tgz#a4c07d47ff737e8ee7e586fe636ff0e1ddff070a"
+  integrity sha512-JepeIUPFDARgIs0zD/SKPgFsJEAF0X5/qO80llx59gOxFTboS9Amv3S+QfB7lqBId5sFXJ99BN0J6zFRvL9dDA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -2411,6 +2416,11 @@ babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   version "7.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
   integrity sha512-Xj9XuRuz3nTSbaTXWv3itLOcxyF4oPD8douBBmj7U9BBC6nEBYfyOJYQMf/8PJAFotC62UY5dFfIGEPr7WswzQ==
+
+babel-plugin-transform-remove-console@^6.9.4:
+  version "6.9.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.4.tgz#b980360c067384e24b357a588d807d3c83527780"
+  integrity sha1-uYA2DAZzhOJLNXpYjYB9PINSd4A=
 
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"
@@ -7708,6 +7718,11 @@ react-native-localize@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/react-native-localize/-/react-native-localize-2.1.6.tgz#2d3e98ca9a2115ee8f0eca4e3116219893144123"
   integrity sha512-3vwo+bx/jm4yPlXi3OORj4vWav9EQnU+e1aaG4EpfGt6v9goMn5CJSIfA4Vu1ohL3hfL8QUHj20TvKJsdMpfXQ==
+
+react-native-permissions@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-3.2.0.tgz#2199a49e96bac633016955d36142032d747d0d3e"
+  integrity sha512-UPXxf2twjYL9vPI4HP2kT15AOTY489MhsNuyAgp+wJM2IRkkSVW6rO3k4WuSRL9ZmPhwkWb9bYjf8EEwRzZcXg==
 
 react-native-reanimated@^2.3.1:
   version "2.3.1"

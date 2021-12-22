@@ -1,11 +1,11 @@
 import { isNull, isUndefined, omitBy } from 'lodash';
 
 /**
- * 删除对象中为falsy的键值对
+ * Delete the falsy key-value pair in the object
  * @param obj
  * @returns
  */
-export function removeEmpty(obj: Record<string, any>) {
+export function removeEmptyKey(obj: Record<string, any>) {
   return omitBy(
     {
       ...obj,

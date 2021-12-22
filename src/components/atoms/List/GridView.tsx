@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, FlatListProps, ListRenderItem, StyleProp, View, ViewStyle } from 'react-native';
-import { getGridItemMarginRight, getGridItemWidth, SCREEN_WIDTH } from '_app/utils/dimension';
+import { getGridItemMarginRight, getGridItemWidth, SCREEN_WIDTH } from '_app/utils/devices/dimension';
 
 export interface IGridViewProps<T> extends FlatListProps<T> {
   numColumns?: number;
