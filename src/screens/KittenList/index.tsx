@@ -2,11 +2,11 @@ import React from 'react';
 import { Box, Image, Text, TextBg } from '_app/components/atoms';
 import SvgIcon from '_app/components/atoms/svg-icon';
 import { useSettingsStore } from '_app/store/settings/useSettingsStore';
-import { useTailwind } from '_app/store/useTailwind';
+import { useTheme } from '_app/store/useTheme';
 
 const KittenListScreen = () => {
-  const { setCounter, counter } = useSettingsStore();
-  const { twColor } = useTailwind();
+  const { inc, dec, counter } = useSettingsStore();
+  const { twColor } = useTheme();
 
   console.log('counter', counter);
 
@@ -28,20 +28,22 @@ const KittenListScreen = () => {
       </Box>
       <Box className="h-20 flex-row flex justify-center items-center">
         <Box
-          className="bg-yellow-500 rounded-full px-6 py-4 flex-row justify-center"
-          touchOpacity
+          className={`${
+            counter > 0 ? 'bg-yellow-500' : 'bg-gray-400'
+          } rounded-full flex-row justify-center items-center h-12 w-12`}
+          touchOpacity={counter > 0}
           onPress={() => {
-            setCounter(2);
+            dec(1);
           }}
         >
           <TextBg>-</TextBg>
         </Box>
         <Text className="mx-4">{counter}</Text>
         <Box
-          className="bg-green-500 rounded-full px-6 py-4 flex-row justify-center"
+          className="bg-green-500 rounded-full flex-row justify-center items-center h-12 w-12"
           touchOpacity
           onPress={() => {
-            setCounter(1);
+            inc(1);
           }}
         >
           <TextBg>+</TextBg>

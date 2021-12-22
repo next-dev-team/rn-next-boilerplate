@@ -1,5 +1,5 @@
 import { LinkingOptions } from '@react-navigation/native';
-import { AppStackParams } from './AppNavigation';
+import { AppStackParams } from './appNavigation';
 
 export const linking: LinkingOptions<AppStackParams> = {
   enabled: true,

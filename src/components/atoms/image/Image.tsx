@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import FastImage, { FastImageProps } from 'react-native-fast-image';
-import { useTailwind } from '_app/store/useTailwind';
+import { useTheme } from '_app/store/useTheme';
 
 type IImage = {
   children?: ReactNode;
@@ -10,7 +10,7 @@ type IImage = {
 } & Partial<FastImageProps>;
 
 const Image = ({ children, className = '', src, source, style, ...rest }: IImage) => {
-  const { tw } = useTailwind();
+  const { tw } = useTheme();
   return (
     <FastImage
       source={{ uri: src, ...(source as any) }}

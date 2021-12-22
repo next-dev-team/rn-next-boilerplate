@@ -1,8 +1,7 @@
 import { useCreation } from 'ahooks';
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext } from 'react';
 import { TextStyle } from 'react-native';
 import { create, RnColorScheme, TailwindFn, useAppColorScheme, useDeviceContext } from 'twrnc';
-import { useSettingsStore } from './settings/useSettingsStore';
 
 export const tw = create(require('../../tailwind.config'));
 
@@ -21,7 +20,6 @@ export interface TailwindProviderProps {}
 
 export const TailwindProvider: React.FunctionComponent<TailwindProviderProps> = ({ children }) => {
   const twStyle = tw.style;
-  const { colorScheme } = useSettingsStore();
   useDeviceContext(tw, { withDeviceColorScheme: false });
 
   const [colorTwScheme, toggleColorScheme, setColorSchemeApp] = useAppColorScheme(tw);
@@ -30,10 +28,6 @@ export const TailwindProvider: React.FunctionComponent<TailwindProviderProps> = 
     //@ts-ignore
     return (isDefaultObj ? cls : cls?.[(clx.includes('bg') && 'backgroundColor') || clsKey]) as string;
   };
-
-  useEffect(() => {
-    setColorSchemeApp(colorScheme as any);
-  }, [setColorSchemeApp]);
 
   // Memoize the context value to skip rerenders
   const value = useCreation(
@@ -44,7 +38,7 @@ export const TailwindProvider: React.FunctionComponent<TailwindProviderProps> = 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
 
-export const useTailwind = () => {
+export const useTheme = () => {
   const ctx = useContext(Context);
   return ctx;
 };

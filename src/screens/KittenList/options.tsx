@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { Box, Image, Text } from '_app/components/atoms';
 import SvgIcon from '_app/components/atoms/svg-icon';
 import { useSettingsStore } from '_app/store/settings/useSettingsStore';
-import { useTailwind } from '_app/store/useTailwind';
+import { useTheme } from '_app/store/useTheme';
 
 const RenderOption = () => {
   const { colorScheme, setColorScheme, currentLocaleKey, setCurrentLocaleKey } = useSettingsStore();
   console.log('colorScheme', colorScheme);
   const { t } = useTranslation();
-  const { twColor, tw } = useTailwind();
+  const { twColor, tw } = useTheme();
 
   return (
     <>

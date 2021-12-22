@@ -1,7 +1,7 @@
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { KittenList, KittenListOption } from '_app/screens';
-import { useTailwind } from '_app/store/useTailwind';
+import { useTheme } from '_app/store/useTheme';
 
 const Stack = createStackNavigator<AppStackParams>();
 
@@ -12,7 +12,7 @@ export type AppStackParams = {
 };
 
 const AppNavigation = () => {
-  const { tw } = useTailwind();
+  const { tw } = useTheme();
   return (
     <Stack.Navigator
       initialRouteName="KittenList"

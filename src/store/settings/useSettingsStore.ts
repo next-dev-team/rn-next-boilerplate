@@ -1,8 +1,6 @@
-import { create, TailwindFn } from 'twrnc';
+import { TailwindFn } from 'twrnc';
 import i18n, { defaultI18nKey, I18nKey } from '_app/i18n';
 import { createStatePersist, usePersistStore } from '_app/plugins';
-
-const twConfig = create(require('../../../tailwind.config.js'));
 
 type IInitStore = {
   colorScheme: 'dark' | 'light' | 'system';
@@ -32,7 +30,6 @@ export function useSettingsStore() {
   });
 
   const setColorScheme = (colorScheme: IInitStore['colorScheme'] = 'light') => {
-    // tw.setColorScheme(colorScheme as any);
     const theme = {
       dark: 'dark',
       light: 'light',
@@ -42,11 +39,6 @@ export function useSettingsStore() {
     state.colorScheme.set(theme?.[colorScheme]);
   };
 
-  // const twColor = useMemoizedFn((clx: string, clsKey: keyof TextStyle = 'color', isDefaultObj?: boolean) => {
-  //   const cls = twStyle(`${clx}`);
-  //   return (isDefaultObj ? cls : cls?.[(clx.includes('bg') && 'backgroundColor') || clsKey]) as string;
-  // });
-
   return {
     setCurrentLocaleKey: (key: I18nKey = 'en') => {
       state.currentLocaleKey.set(key);
@@ -55,8 +47,11 @@ export function useSettingsStore() {
     get currentLocaleKey() {
       return state.currentLocaleKey.get();
     },
-    setCounter: (by = 1) => {
+    inc: (by = 1) => {
       state.counter.set(p => p + by);
+    },
+    dec: (by = 1) => {
+      state.counter.set(p => p - by);
     },
     get counter() {
       return state.counter.get();
@@ -64,6 +59,9 @@ export function useSettingsStore() {
     setColorScheme,
     get colorScheme() {
       return state.colorScheme.get();
+    },
+    get darkMode() {
+      return state.colorScheme.get() === 'dark';
     },
   } as const;
 }
