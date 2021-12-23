@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import noop from 'lodash/noop';
 import { findBestAvailableLanguage } from 'react-native-localize';
+import { defaultI18nKey } from '.';
 import * as resources from './locales';
 
 const LOCALE_PERSISTENCE_KEY = 'app_locale';
@@ -20,7 +21,7 @@ const RNLanguageDetector = {
         const detectedLocale = await findBestAvailableLanguage(languageTags);
 
         // Return detected locale or default language
-        return cb(detectedLocale?.languageTag ?? resources.defaultI18nKey);
+        return cb(detectedLocale?.languageTag ?? defaultI18nKey);
       }
 
       cb(persistedLocale);
@@ -28,7 +29,7 @@ const RNLanguageDetector = {
       console.warn('Failed to detect locale!');
       // console.warn('Will use defaultLanguage:', defaultLanguage);
 
-      cb(resources.defaultI18nKey);
+      cb(defaultI18nKey);
     }
   },
   init: noop,
