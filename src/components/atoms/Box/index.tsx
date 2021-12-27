@@ -46,7 +46,7 @@ const Box = ({
 
   const renderBox = {
     touchOpacity: (
-      <TouchableOpacity activeOpacity={0.8} {...{ onPress, touchOpacityProps }}>
+      <TouchableOpacity activeOpacity={0.8} {...{ onPress, ...touchOpacityProps }}>
         {viewBox}
       </TouchableOpacity>
     ),
