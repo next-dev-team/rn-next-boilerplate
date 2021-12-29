@@ -2,7 +2,7 @@ import env from '_app/env';
 
 export const apiUrl = {
   baseUrl: env.API_URL,
-  token: env.Token,
+  token: env.TOKEN,
 };
 
 export enum HTTP_STATUS {

@@ -43,7 +43,7 @@ const AppContainer = () => {
   if (!isReady) {
     return (
       <Box className="h-full w-full bg-primary justify-center items-center">
-        <ActivityIndicator color={twColor('text-white')} size="large" />
+        <ActivityIndicator color={twColor(`text-white`)} size="large" />
       </Box>
     );
   }
