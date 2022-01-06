@@ -1,2 +1,2 @@
-export { default as KittenList } from './KittenList';
-export { default as KittenListOption } from './KittenList/options';
+export { default as KittenListScreen } from './KittenListScreen';
+export { default as KittenListOption } from './KittenListScreen/options';

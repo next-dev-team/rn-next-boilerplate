@@ -1,10 +1,17 @@
+// @ts-ignore
+import { enableLogging } from '@gorhom/bottom-sheet';
 import { Alert, AppRegistry, LogBox } from 'react-native';
 import { setJSExceptionHandler, setNativeExceptionHandler } from 'react-native-exception-handler';
 import 'react-native-gesture-handler';
 //@ts-ignore
 import RNRestart from 'react-native-restart';
+import { enableScreens } from 'react-native-screens';
 import { name as appName } from './app.json';
 import App from './src/app';
+
+enableScreens(true)
+enableLogging();
+
 
 LogBox.ignoreLogs(['Require cycle:']);
 // ignore warnings

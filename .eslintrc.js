@@ -36,5 +36,6 @@ module.exports = {
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     'react/display-name': 'off',
+    "import/no-duplicates": ["error", { "considerQueryString": true }]
   },
 };

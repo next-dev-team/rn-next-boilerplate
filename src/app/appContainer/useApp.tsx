@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useSettingsStore } from '_app/store/settings/useSettingsStore';
+import { useSettingsStore } from '_app/store/settings';
 import { useTheme } from '_app/store/useTheme';
 
 export function useApp() {

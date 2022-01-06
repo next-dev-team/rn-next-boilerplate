@@ -9,10 +9,10 @@ type IText = {
 } & TextProps;
 
 const Text = ({ children, className = '', style, ...rest }: IText) => {
-  const { twStyle } = useTheme();
+  const { tw } = useTheme();
 
   return (
-    <RnText style={[twStyle(`text-black dark:text-white ${className}`), style]} {...rest}>
+    <RnText style={[tw`text-black dark:text-white ${className}`, style]} {...rest}>
       {children}
     </RnText>
   );
