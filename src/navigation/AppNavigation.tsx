@@ -21,6 +21,9 @@ const AppNavigation = () => {
         cardStyle: {
           ...tw`bg-white dark:bg-dark`,
         },
+        headerStyle: {
+          // ...tw`pt-3`,
+        },
       }}
     >
       <Stack.Screen name="KittenList" component={KittenListScreen} options={KittenListOption} />

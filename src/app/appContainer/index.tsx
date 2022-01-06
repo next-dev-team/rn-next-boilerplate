@@ -2,7 +2,8 @@ import { useFlipper } from '@react-navigation/devtools';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { ActivityIndicator, Linking, Platform } from 'react-native';
-import { Box, Container } from '_app/components/atoms';
+import { Box } from '_app/components/atoms';
+import { ContainerRoot } from '_app/components/atoms/Layout/container';
 import { isDev } from '_app/constants';
 import AppNavigation from '_app/navigation/appNavigation';
 import { linkingApp } from '_app/navigation/linking';
@@ -50,9 +51,9 @@ const AppContainer = () => {
 
   return (
     <NavigationContainer ref={navigationRef} fallback={<ActivityIndicator />} linking={linkingApp}>
-      <Container>
+      <ContainerRoot>
         <AppNavigation />
-      </Container>
+      </ContainerRoot>
     </NavigationContainer>
   );
 };
