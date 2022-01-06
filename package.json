@@ -6,7 +6,7 @@
   "scripts": {
     "eslint": "eslint --fix --ext .ts,.tsx src/",
     "prettier": "prettier --check src/**/*.tsx --write",
-    "postinstall": "npx husky install",
+    "postinstall": "npx husky install && npx patch-package",
     "android:dev": "run-s env:dev && react-native run-android",
     "ios:dev": "run-s env:dev && react-native run-ios",
     "ios:11:dev": "run-s env:dev && react-native run-ios --simulator='iPhone 11 Pro'",
@@ -57,7 +57,7 @@
     "i18next": "21.4.2",
     "lodash": "^4.17.21",
     "postcss": "^8.4.5",
-    "rc-field-form": "^1.22.0",
+    "rc-field-form": "^1.22.1",
     "react": "17.0.2",
     "react-error-boundary": "^3.1.4",
     "react-fast-compare": "^3.2.0",
@@ -81,6 +81,8 @@
     "twrnc": "^2.2.0"
   },
   "devDependencies": {
+    "@react-navigation/devtools": "^6.0.4",
+    "react-native-flipper": "^0.127.0",
     "react-native-codegen": "^0.0.12",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "@babel/core": "^7.12.9",

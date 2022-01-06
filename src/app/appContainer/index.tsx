@@ -1,3 +1,4 @@
+import { useFlipper } from '@react-navigation/devtools';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { ActivityIndicator, Linking, Platform } from 'react-native';
@@ -8,10 +9,9 @@ import { linkingApp } from '_app/navigation/linking';
 import { navigationRef } from '_app/navigation/navigationService';
 import { getItem } from '_app/utils';
 import { useApp } from './useApp';
-
 const AppContainer = () => {
   const { twColor } = useApp();
-
+  useFlipper(navigationRef);
   const [isReady, setIsReady] = React.useState(isDev ? false : true);
   const [, setInitialState] = React.useState();
   const PERSISTENCE_KEY = 'NAVIGATION_STATE';
