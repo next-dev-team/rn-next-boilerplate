@@ -1,14 +1,13 @@
 import { useEffect } from 'react';
-import { useSettingsStore } from '_app/store/settings';
-import { useTheme } from '_app/store/useTheme';
+import { useSettingsStore, useTheme } from '_app/store';
 
-export function useApp() {
+export const useApp = () => {
   const { colorScheme } = useSettingsStore();
-  const { twColor, setColorSchemeApp } = useTheme();
+  const { setColorSchemeApp, twColor } = useTheme();
 
   useEffect(() => {
     setColorSchemeApp(colorScheme as any);
   }, [colorScheme]);
 
   return { twColor };
-}
+};

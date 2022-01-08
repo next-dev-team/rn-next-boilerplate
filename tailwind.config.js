@@ -12,13 +12,15 @@ module.exports = {
     extend: {
       minHeight: {},
       colors: {
+        cyan: color.cyan,
         primary: color.green[400],
+        primary600: color.green[600],
         success: color.green[400],
         dark: color.black,
         light: color.white,
         gradient: {
-          from: 'rgba(196, 196, 196, 0.24)',
-          to: 'rgba(196, 196, 196, 0)',
+          from: '#3a7bd5',
+          to: 'rgba(196, 196, 196, 0.6)',
         },
       },
       fontSize: {

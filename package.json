@@ -15,6 +15,7 @@
     "pod": "cd ios && pod install --repo-update && cd ..",
     "pod-m1": "cd ios && arch -x86_64 pod install --repo-update && cd ..",
     "emu": "emulator -avd Pixel30",
+    "clean": "react-native-clean-project",
     "clean:ios": "rm -rf ios/build",
     "clean:android": "cd android && ./gradlew cleanBuildCache && ./gradlew clean && cd ..",
     "build:android": "yarn clean:android && cd android && ./gradlew assembleRelease && cd ..",
@@ -28,7 +29,8 @@
     "convert2Webp": "sh ./scripts/cwebp.sh",
     "gen-svg": "npx svgicon-create",
     "commit": "git-cz",
-    "tsc": "tsc -p tsconfig.json"
+    "tsc": "tsc -p tsconfig.json",
+    "clear": "rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-*"
   },
   "config": {
     "commitizen": {
@@ -43,7 +45,7 @@
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4.1.5",
-    "@gorhom/portal": "^1.0.11",
+    "@gorhom/portal": "^1.0.12",
     "@hookstate/core": "^3.0.13",
     "@react-native-async-storage/async-storage": "^1.15.8",
     "@react-native-community/masked-view": "^0.1.11",
@@ -68,7 +70,8 @@
     "react-native": "0.65.1",
     "react-native-exception-handler": "^2.10.10",
     "react-native-fast-image": "^8.5.6",
-    "react-native-gesture-handler": "^1.10.3",
+    "react-native-gesture-handler": "^2.1.0",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-localize": "^2.1.6",
     "react-native-reanimated": "^2.3.1",
     "react-native-redash": "^16.2.3",
@@ -81,10 +84,12 @@
     "redux": "^4.1.1",
     "redux-persist": "^6.0.0",
     "tailwindcss": "^2.2.19",
-    "twrnc": "^2.2.0"
+    "twrnc": "^2.2.0",
+    "utility-types": "^3.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-react-jsx": "^7.16.7",
     "@babel/runtime": "^7.12.5",
     "@commitlint/cli": "^13.1.0",
     "@react-native-community/eslint-config": "^2.0.0",

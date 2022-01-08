@@ -2,7 +2,7 @@ import { BottomSheetBackgroundProps } from '@gorhom/bottom-sheet';
 import React, { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 import Animated, { interpolateColor, useAnimatedStyle } from 'react-native-reanimated';
-import { useTheme } from '_app/store/useTheme';
+import { useTheme } from '_app/store';
 
 interface CustomBackgroundProps extends BottomSheetBackgroundProps {}
 

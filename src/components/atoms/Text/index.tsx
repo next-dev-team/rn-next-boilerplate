@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { StyleProp, Text as RnText, TextProps, TextStyle } from 'react-native';
-import { useTheme } from '_app/store/useTheme';
+import { useTheme } from '_app/store';
 
 type IText = {
   children: ReactNode;

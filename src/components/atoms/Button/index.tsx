@@ -1,8 +1,6 @@
-import clx from 'classnames';
 import React, { isValidElement, ReactNode } from 'react';
-import { Box, Text } from '_app/components/atoms';
-import { IBox } from '../box';
-import TextBg from '../text/textBg';
+import { Box, IBox, Text, TextBg } from '_app/components/atoms';
+import { clx } from '_app/utils';
 
 export type ButtonProps = React.ComponentProps<typeof Box> & {
   onPress?: () => void;

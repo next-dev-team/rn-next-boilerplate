@@ -1,3 +1,3 @@
-import { px } from '_app/utils/devices/dimension';
+import { px } from '_app/utils';
 //for svg generator
 export { px };

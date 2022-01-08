@@ -1,21 +1,17 @@
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { KittenListOption, KittenListScreen } from '_app/screens';
-import { useTheme } from '_app/store/useTheme';
+import { DetailScreen, HomeOptions, HomeScreen } from '_app/screens';
+import { useTheme } from '_app/store';
 
 const Stack = createStackNavigator<AppStackParams>();
 
-export type AppStackParams = {
-  Splash: undefined;
-  KittenList: undefined;
-  PostDetail: { state: PostsApi.Datum };
-};
-
 const AppNavigation = () => {
   const { tw } = useTheme();
+
   return (
     <Stack.Navigator
       initialRouteName="KittenList"
+      // will apply to all option style except some screen has own own option
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         cardStyle: {
@@ -26,7 +22,8 @@ const AppNavigation = () => {
         },
       }}
     >
-      <Stack.Screen name="KittenList" component={KittenListScreen} options={KittenListOption} />
+      <Stack.Screen name="KittenList" component={HomeScreen} options={HomeOptions} />
+      <Stack.Screen name="DetailScreen" component={DetailScreen} />
     </Stack.Navigator>
   );
 };

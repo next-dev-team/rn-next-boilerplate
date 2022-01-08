@@ -1,6 +1,5 @@
 import { LinkingOptions } from '@react-navigation/native';
 import { Linking } from 'react-native';
-import { AppStackParams } from './appNavigation';
 // https://reactnavigation.org/docs/navigation-container#linking
 
 export const linkingApp: LinkingOptions<AppStackParams> = {

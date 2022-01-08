@@ -8,7 +8,6 @@ import { useTheme } from '_app/store/useTheme';
 
 const RenderOption = () => {
   const { colorScheme, setColorScheme, currentLocaleKey, setCurrentLocaleKey } = useSettingsStore();
-  console.log('colorScheme', colorScheme);
   const { t } = useTranslation();
   const { twColor, tw } = useTheme();
 
@@ -46,8 +45,8 @@ const RenderOption = () => {
   );
 };
 
-const KittenListOption: StackNavigationOptions = {
+const DetailOption: StackNavigationOptions = {
   header: () => <RenderOption />,
 };
 
-export default KittenListOption;
+export default DetailOption;

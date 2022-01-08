@@ -1,2 +1,2 @@
-export * from './useDisplayStore';
-export * from './useSettingsStore';
+export { useDisplayStore } from './useDisplayStore';
+export { useSettingsStore } from './useSettingsStore';

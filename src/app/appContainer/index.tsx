@@ -1,59 +1,48 @@
-import { useFlipper } from '@react-navigation/devtools';
-import { NavigationContainer } from '@react-navigation/native';
+// import { useFlipper } from '@react-navigation/devtools';
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { delay } from 'lodash';
 import React from 'react';
-import { ActivityIndicator, Linking, Platform } from 'react-native';
-import { Box } from '_app/components/atoms';
-import { ContainerRoot } from '_app/components/atoms/Layout/container';
-import { isDev } from '_app/constants';
-import AppNavigation from '_app/navigation/appNavigation';
-import { linkingApp } from '_app/navigation/linking';
-import { navigationRef } from '_app/navigation/navigationService';
-import { getItem } from '_app/utils';
+import { ActivityIndicator } from 'react-native';
+import { Box, ContainerRoot } from '_app/components/atoms';
+import { AppNavigation, linkingApp, navigationRef } from '_app/navigation';
+import { useSettingsStore } from '_app/store';
 import { useApp } from './useApp';
-const AppContainer = () => {
+
+const NavigationRoot = ({ isReady }: { isReady: boolean }) => {
   const { twColor } = useApp();
-  useFlipper(navigationRef);
-  const [isReady, setIsReady] = React.useState(isDev ? false : true);
-  const [, setInitialState] = React.useState();
-  const PERSISTENCE_KEY = 'NAVIGATION_STATE';
 
-  React.useEffect(() => {
-    const restoreState = async () => {
-      try {
-        const initialUrl = await Linking.getInitialURL();
-
-        if (Platform.OS !== 'web' && initialUrl == null) {
-          // Only restore state if there's no deep link and we're not on web
-          const savedStateString = await getItem(PERSISTENCE_KEY);
-          const state = savedStateString ? JSON.parse(savedStateString) : undefined;
-
-          if (state !== undefined) {
-            setInitialState(state);
-          }
-        }
-      } finally {
-        setIsReady(true);
-      }
-    };
-
-    if (!isReady) {
-      restoreState();
-    }
-  }, [isReady]);
-
-  if (!isReady) {
+  if (isReady) {
     return (
       <Box className="h-full w-full bg-primary justify-center items-center">
         <ActivityIndicator color={twColor(`text-white`)} size="large" />
       </Box>
     );
   }
+  return (
+    <ContainerRoot>
+      <AppNavigation />
+    </ContainerRoot>
+  );
+};
+
+const AppContainer = ({}) => {
+  const [isReady, setIsReady] = React.useState(true);
+  const { darkMode } = useSettingsStore();
+  // useFlipper(navigationRef);
 
   return (
-    <NavigationContainer ref={navigationRef} fallback={<ActivityIndicator />} linking={linkingApp}>
-      <ContainerRoot>
-        <AppNavigation />
-      </ContainerRoot>
+    <NavigationContainer
+      theme={darkMode ? DarkTheme : DefaultTheme}
+      ref={navigationRef}
+      fallback={<ActivityIndicator />}
+      linking={linkingApp}
+      onReady={() => {
+        delay(() => {
+          setIsReady(false);
+        }, 500);
+      }}
+    >
+      <NavigationRoot isReady={isReady} />
     </NavigationContainer>
   );
 };

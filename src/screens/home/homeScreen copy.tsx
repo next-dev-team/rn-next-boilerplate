@@ -7,12 +7,10 @@ import { useDisplayStore } from '_app/store/settings';
 import { useSettingsStore } from '_app/store/settings/useSettingsStore';
 import { useTheme } from '_app/store/useTheme';
 
-const KittenListScreen = () => {
+const HomeScreen1 = () => {
   const { inc, dec, counter } = useSettingsStore();
   const { bSheetHomeRef, openBSheetHome } = useDisplayStore();
   const { twColor } = useTheme();
-
-  console.log('counter', counter);
 
   return (
     <>
@@ -65,4 +63,4 @@ const KittenListScreen = () => {
   );
 };
 
-export default KittenListScreen;
+export default HomeScreen1;

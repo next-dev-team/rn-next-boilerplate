@@ -35,7 +35,6 @@ export function useSettingsStore() {
       light: 'light',
       system: 'system',
     } as Record<IInitStore['colorScheme'], IInitStore['colorScheme']>;
-
     state.colorScheme.set(theme?.[colorScheme]);
   };
 

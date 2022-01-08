@@ -20,7 +20,7 @@ export type IBox = {
   touchOpacityProps?: TouchableOpacityProps;
 } & Partial<Pick<TouchableOpacityProps, 'onPress'> & ViewProps>;
 
-const Box = ({
+export const Box = ({
   variant = 'view',
   touchOpacity,
   children,
@@ -56,5 +56,3 @@ const Box = ({
 
   return renderBox?.[touchOpacity ? 'touchOpacity' : variant] || null;
 };
-
-export default Box;
