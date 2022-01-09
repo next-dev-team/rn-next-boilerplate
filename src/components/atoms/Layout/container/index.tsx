@@ -6,7 +6,6 @@ import { useSettingsStore, useTheme } from '_app/store';
 export const ContainerRoot = ({ children }: any) => {
   const { darkMode } = useSettingsStore();
   const { tw, twColor } = useTheme();
-  console.log('dardk', tw`bg-white dark:bg-dark`);
 
   return (
     <>
@@ -15,7 +14,9 @@ export const ContainerRoot = ({ children }: any) => {
         translucent={darkMode}
         backgroundColor={twColor(`bg-white dark:bg-dark`)}
       />
-      <SafeAreaView style={tw`flex-1 bg-white dark:bg-dark`}>{children}</SafeAreaView>
+      <SafeAreaView edges={['top', 'left', 'right']} style={tw`flex-1 bg-white dark:bg-dark`}>
+        {children}
+      </SafeAreaView>
     </>
   );
 };

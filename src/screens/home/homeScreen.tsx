@@ -1,25 +1,18 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { Button, Layout, Section } from '_app/components/atoms';
+import { navigateStack } from '_app/navigation';
 import { useTheme } from '_app/store';
+import { useHomeStore } from '_app/store/home/useHomeStore';
 
-type menus = { title: string }[];
 const HomeScreen = () => {
   const { twGradients, tw } = useTheme();
-
-  const menusScreen = [
-    {
-      title: 'Bottom Sheet',
-    },
-    {
-      title: 'Tailwind Cs',
-    },
-  ] as menus;
+  const { menusScreen } = useHomeStore();
 
   return (
     <Layout>
       <Section>
-        {menusScreen.map(({ title }, ind) => {
+        {menusScreen.map((state, ind) => {
           return (
             <LinearGradient
               key={ind}
@@ -32,7 +25,13 @@ const HomeScreen = () => {
               }
               style={tw`rounded-full mb-2.5`}
             >
-              <Button label={title} labelCls="uppercase font-bold" />
+              <Button
+                label={state.title}
+                onPress={() => {
+                  navigateStack('DetailScreen', { state: { ...state, menusScreen } });
+                }}
+                labelCls="uppercase font-bold"
+              />
             </LinearGradient>
           );
         })}

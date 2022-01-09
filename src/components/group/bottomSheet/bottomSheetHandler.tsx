@@ -1,8 +1,9 @@
 import { BottomSheetHandleProps } from '@gorhom/bottom-sheet';
 import React, { useMemo } from 'react';
-import { StyleProp, StyleSheet, Text, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import Animated, { Extrapolate, interpolate, useAnimatedStyle, useDerivedValue } from 'react-native-reanimated';
 import { toRad } from 'react-native-redash';
+import { Text } from '_app/components/atoms';
 import { transformOrigin } from '_app/utils';
 
 interface CustomHandleProps extends BottomSheetHandleProps {
@@ -87,7 +88,7 @@ const CustomHandle: React.FC<CustomHandleProps> = ({ title, style, animatedIndex
     <Animated.View style={[containerStyle, containerAnimatedStyle]} renderToHardwareTextureAndroid={true}>
       <Animated.View style={[leftIndicatorStyle, leftIndicatorAnimatedStyle]} />
       <Animated.View style={[rightIndicatorStyle, rightIndicatorAnimatedStyle]} />
-      <Text style={styles.title}>{title}</Text>
+      <Text className="mt-6 font-bold text-center text-base">{title}</Text>
     </Animated.View>
   );
 };

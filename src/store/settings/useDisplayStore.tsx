@@ -23,8 +23,11 @@ export function useDisplayStore() {
   const bSheetHomeRef = useRef<BottomSheetMethods>(null);
 
   const openBSheetHome = () => {
-    bSheetHomeRef.current?.expand();
+    bSheetHomeRef?.current?.expand();
+  };
+  const closeBSheetHome = () => {
+    bSheetHomeRef?.current?.close();
   };
 
-  return { bSheetHomeRef, openBSheetHome } as const;
+  return { bSheetHomeRef, openBSheetHome, closeBSheetHome } as const;
 }

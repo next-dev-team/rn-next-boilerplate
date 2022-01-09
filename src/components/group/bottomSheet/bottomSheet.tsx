@@ -1,6 +1,5 @@
 import BTSheet, { BottomSheetBackdrop, BottomSheetProps } from '@gorhom/bottom-sheet';
-import { useMemoizedFn } from 'ahooks';
-import React, { ReactNode, Ref, useMemo } from 'react';
+import React, { ReactNode, Ref, useCallback, useMemo } from 'react';
 import { Box } from '_app/components/atoms';
 import { useTheme } from '_app/store';
 import CustomHandle from './bottomSheetHandler';
@@ -13,17 +12,17 @@ const BottomSheet = React.forwardRef(({ children, enableBackdrop, ...rest }: IBo
   // variables
   const snapPoints = useMemo(() => ['20%', '50%'], []);
 
-  const renderBackdrop = useMemoizedFn(props => <BottomSheetBackdrop pressBehavior="none" {...props} />);
+  const renderBackdrop = useCallback(props => <BottomSheetBackdrop pressBehavior="none" {...props} />, []);
   // renders
-  const renderCustomHandle = useMemoizedFn(props => <CustomHandle title="Welcome Sila" {...props} />);
+  const renderCustomHandle = useCallback(props => <CustomHandle title="Welcome Sila" {...props} />, []);
 
   return (
     <BTSheet
       ref={ref}
       handleComponent={renderCustomHandle}
-      backgroundStyle={tw`bg-white dark:bg-gray-900`}
+      backgroundStyle={tw`bg-white dark:bg-gray-800`}
       backdropComponent={enableBackdrop ? renderBackdrop : null}
-      style={[tw`flex-1 shadow-radius-2 shadow-2xl shadow-black rounded-tr-3xl rounded-tl-3xl`]}
+      style={[tw`flex-1 shadow-radius-2 shadow-xl shadow-black dark:shadow-white rounded-tr-3xl rounded-tl-3xl`]}
       snapPoints={snapPoints}
       animateOnMount={true}
       {...rest}

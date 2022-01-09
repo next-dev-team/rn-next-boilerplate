@@ -1,1 +1,2 @@
-export { default as BottomSheet, IBottomSheet } from './bottomSheet/bottomSheet';
+export { default as BottomSheet } from './bottomSheet/bottomSheet';
+export type { IBottomSheet } from './bottomSheet/bottomSheet';

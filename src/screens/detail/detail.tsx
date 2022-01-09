@@ -1,60 +1,25 @@
+import { useCreation } from 'ahooks';
 import React from 'react';
-import { Box, Button, Image, SvgIcon, Text, TextBg } from '_app/components/atoms';
-import { BottomSheet } from '_app/components/group';
-import { useDisplayStore, useSettingsStore, useTheme } from '_app/store';
+import { BottomSheetTemplate, TailwindTemplate } from '_app/components/templates';
+import { getCurrentRoute } from '_app/navigation';
+import { useHomeStore } from '_app/store/home/useHomeStore';
 
 export default function DetailScreen() {
-  const { inc, dec, counter } = useSettingsStore();
-  const { bSheetHomeRef, openBSheetHome } = useDisplayStore();
-  const { twColor } = useTheme();
+  const { menusScreen, detailScreenTitle } = useHomeStore();
 
-  return (
-    <>
-      <Box className="p-4">
-        <Box>
-          <Image
-            className="h-44 rounded-xl mb-4 w-full"
-            src="https://thecodingcompany.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1630913458778%2FvlDkZyXQc.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75"
-          />
-          <Text numberOfLines={2} className="font-medium text-base mb-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indus
-          </Text>
+  const RouteState = getCurrentRoute('DetailScreen')?.params?.state;
 
-          <Box className="flex-row items-center" touchOpacity>
-            <SvgIcon size={24} name="date" color={twColor(`bg-green-500`)} />
-            <Text className="ml-1 text-caption">Next Dev</Text>
-          </Box>
-        </Box>
-        <Box className="h-20 flex-row flex justify-center items-center">
-          <Box
-            className={`${
-              counter > 0 ? 'bg-yellow-500' : 'bg-gray-400'
-            } rounded-full flex-row justify-center items-center h-12 w-12`}
-            touchOpacity={counter > 0}
-            onPress={() => {
-              dec(1);
-            }}
-          >
-            <TextBg>-</TextBg>
-          </Box>
-          <Text className="mx-4">{counter}</Text>
-          <Box
-            className="bg-green-500 rounded-full flex-row justify-center items-center h-12 w-12"
-            touchOpacity
-            onPress={() => {
-              inc(1);
-            }}
-          >
-            <TextBg>+</TextBg>
-          </Box>
-        </Box>
-      </Box>
+  const screenTitle = RouteState?.title || detailScreenTitle.TailwindCSS;
 
-      <Button className="bg-green-500 mx-24" label="open bottom sheet" onPress={openBSheetHome} />
+  const renderPage = useCreation(() => {
+    //all detail menu here
+    const menus = {
+      [detailScreenTitle.TailwindCSS]: <TailwindTemplate />,
+      [detailScreenTitle.BottomSheet]: <BottomSheetTemplate />,
+    };
 
-      <BottomSheet ref={bSheetHomeRef}>
-        <Text>helo</Text>
-      </BottomSheet>
-    </>
-  );
+    return menus?.[screenTitle] || menus[detailScreenTitle.TailwindCSS];
+  }, [menusScreen, detailScreenTitle]);
+
+  return renderPage;
 }

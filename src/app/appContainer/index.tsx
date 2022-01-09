@@ -39,7 +39,7 @@ const AppContainer = ({}) => {
       onReady={() => {
         delay(() => {
           setIsReady(false);
-        }, 500);
+        }, 300);
       }}
     >
       <NavigationRoot isReady={isReady} />

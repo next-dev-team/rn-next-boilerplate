@@ -30,7 +30,7 @@ target 'Kitten' do
     installer.pods_project.build_configurations.each do |config|
       config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
       # turn off autoinstall
-      config.build_settings['OTHER_CPLUSPLUSFLAGS'] = '-DDONT_AUTOINSTALL_REANIMATED'
+      config.build_settings['OTHER_CPLUSPLUSFLAGS'] = ''
   end
 
   end

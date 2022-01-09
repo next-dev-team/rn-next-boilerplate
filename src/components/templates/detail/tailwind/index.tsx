@@ -1,15 +1,9 @@
 import React from 'react';
-import { Box, Image, Text, TextBg } from '_app/components/atoms';
-import Button from '_app/components/atoms/Button';
-import SvgIcon from '_app/components/atoms/svg-icon';
-import { BottomSheet } from '_app/components/group';
-import { useDisplayStore } from '_app/store/settings';
-import { useSettingsStore } from '_app/store/settings/useSettingsStore';
-import { useTheme } from '_app/store/useTheme';
+import { Box, Button, Image, SvgIcon, Text, TextBg } from '_app/components/atoms';
+import { useSettingsStore, useTheme } from '_app/store';
 
-const HomeScreen1 = () => {
+export function TailwindTemplate() {
   const { inc, dec, counter } = useSettingsStore();
-  const { bSheetHomeRef, openBSheetHome } = useDisplayStore();
   const { twColor } = useTheme();
 
   return (
@@ -54,13 +48,7 @@ const HomeScreen1 = () => {
         </Box>
       </Box>
 
-      <Button className="bg-green-500 mx-24" label="open bottom sheet" onPress={openBSheetHome} />
-
-      <BottomSheet ref={bSheetHomeRef}>
-        <Text>helo</Text>
-      </BottomSheet>
+      <Button className="bg-green-500 mx-24" label="open bottom sheet" />
     </>
   );
-};
-
-export default HomeScreen1;
+}

@@ -1,4 +1,6 @@
+type IMenus = { title: string; route?: keyof AppStackParams };
+
 declare type AppStackParams = {
   KittenList: undefined;
-  DetailScreen: { state: PostsApi.Datum };
+  DetailScreen: { state: { title: string; menusScreen: IMenus[] } };
 };
