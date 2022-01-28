@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import I18n from '_app/i18n';
 import { TailwindProvider } from '_app/store';
 import AppContainer from './appContainer';
+import './logBox';
 
 const App = () => {
   return (

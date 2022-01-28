@@ -15,7 +15,7 @@ export interface TailwindContext {
 
 const Context = createContext<TailwindContext>({} as any);
 
-export interface TailwindProviderProps {}
+export type TailwindProviderProps = {};
 
 export const TailwindProvider: React.FunctionComponent<TailwindProviderProps> = ({ children }) => {
   const twStyle = tw.style;
@@ -24,6 +24,7 @@ export const TailwindProvider: React.FunctionComponent<TailwindProviderProps> = 
     return useMemo(() => {
       const obj = fn(tw);
       return obj;
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, deps);
   };
 
@@ -56,6 +57,7 @@ export const TailwindProvider: React.FunctionComponent<TailwindProviderProps> = 
       twGradients,
       useTailwindStyles,
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [twStyle, colorTwScheme, toggleColorScheme, setColorSchemeApp, twColor, twGradients, useTailwindStyles, tw]
   );
 

@@ -298,11 +298,11 @@ PODS:
     - React-jsi (= 0.65.1)
     - React-perflogger (= 0.65.1)
   - React-jsinspector (0.65.1)
-  - react-native-flipper (0.127.0):
+  - react-native-flipper (0.131.0):
     - React-Core
-  - react-native-netinfo (6.2.1):
+  - react-native-netinfo (7.1.9):
     - React-Core
-  - react-native-restart (0.0.22):
+  - react-native-restart (0.0.23):
     - React-Core
   - react-native-safe-area-context (3.3.2):
     - React-Core
@@ -372,7 +372,7 @@ PODS:
     - React-perflogger (= 0.65.1)
   - ReactNativeExceptionHandler (2.10.10):
     - React-Core
-  - RNCAsyncStorage (1.15.14):
+  - RNCAsyncStorage (1.15.17):
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
@@ -380,7 +380,7 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNGestureHandler (2.1.0):
+  - RNGestureHandler (2.2.0):
     - React-Core
   - RNLocalize (2.1.7):
     - React-Core
@@ -412,7 +412,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.10.1):
+  - RNScreens (3.10.2):
     - React-Core
     - React-RCTImage
   - RNSVG (12.1.1):
@@ -646,9 +646,9 @@ SPEC CHECKSUMS:
   React-jsi: 12913c841713a15f64eabf5c9ad98592c0ec5940
   React-jsiexecutor: 43f2542aed3c26e42175b339f8d37fe3dd683765
   React-jsinspector: 41e58e5b8e3e0bf061fdf725b03f2144014a8fb0
-  react-native-flipper: b9e2e817604af8da0d5a9ba20a8516e780e30f3c
-  react-native-netinfo: 3d3769f0d65de15c83a9bf1346f8be71de5a24bf
-  react-native-restart: 733a51ad137f15b0f8dc34c4082e55af7da00979
+  react-native-flipper: 20f99d8fb50537c8a1684d6418b2a98fbfce4338
+  react-native-netinfo: 87e5bfaf21ea5c6c110941290aa481dd8e849f98
+  react-native-restart: aaad36f3ed7031daac3565f4a79d67e4f3884a50
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   React-perflogger: fd28ee1f2b5b150b00043f0301d96bd417fdc339
   React-RCTActionSheet: 7f3fa0855c346aa5d7c60f9ced16e067db6d29fa
@@ -663,13 +663,13 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 85187f19dd9c47a7c102f9994f9d14e4dc2110de
   ReactCommon: eafed38eec7b591c31751bfa7494801618460459
   ReactNativeExceptionHandler: b11ff67c78802b2f62eed0e10e75cb1ef7947c60
-  RNCAsyncStorage: ea6b5c280997b2b32a587793163b1f10e580c4f7
+  RNCAsyncStorage: 6bd5a7ba3dde1c3facba418aa273f449bdc5437a
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
-  RNGestureHandler: e5c7cab5f214503dcefd6b2b0cefb050e1f51c4a
+  RNGestureHandler: bf572f552ea324acd5b5464b8d30755b2d8c1de6
   RNLocalize: f567ea0e35116a641cdffe6683b0d212d568f32a
   RNReanimated: 629fedd82e9f6b9138421caa342f0a5ebd711cbe
-  RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
+  RNScreens: d6da2b9e29cf523832c2542f47bf1287318b1868
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d

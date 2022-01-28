@@ -1,4 +1,4 @@
-const color = require('tailwindcss/colors');
+const colors = require('tailwindcss/colors');
 
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig}
@@ -6,18 +6,21 @@ const color = require('tailwindcss/colors');
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', '/src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
       minHeight: {},
       colors: {
-        cyan: color.cyan,
-        primary: color.green[400],
-        primary600: color.green[600],
-        success: color.green[400],
-        dark: color.black,
-        light: color.white,
+        cyan: colors.cyan,
+        primary: colors.green[400],
+        primary600: colors.green[600],
+        success: colors.green[400],
+        green: colors.emerald,
+        yellow: colors.amber,
+        purple: colors.violet,
+        dark: colors.black,
+        light: colors.white,
         gradient: {
           from: '#3a7bd5',
           to: 'rgba(196, 196, 196, 0.6)',
