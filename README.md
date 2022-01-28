@@ -2,7 +2,7 @@
 
 [![React Native](https://img.shields.io/badge/React%20Native-v0.65.1-green.svg)](https://facebook.github.io/react-native/) [![React Navigation V5](https://img.shields.io/badge/React%20Navigation-v6.0.2-blue.svg)](https://reactnavigation.org/)
 
-KittenApp is React Native application. This project is configured with redux, redux thunk with redux-tookit and redux persist. Uses latest version of react-navigation (v6) and using Restyle for type-enforced system to design UI components
+KittenApp is React Native application. This project is uses latest version of react-navigation (v6) and tailwind css for react native system to design UI components
 
 ## Technologies Use
 
@@ -11,8 +11,6 @@ KittenApp is React Native application. This project is configured with redux, re
 - [React Navigation 6](https://reactnavigation.org/) theming support.
 - [React Native Gesture Handler](https://github.com/kmagiera/react-native-gesture-handler)
 - [Tailwind Css React Native](https://www.npmjs.com/package/tailwind-react-native-classnames) - TailwindCSS + React Native, written in TypeScript
-- [Redux](http://redux.js.org/) with [hooks](https://react-redux.js.org/api/hooks) support
-- [Redux Persist](https://github.com/rt2zz/redux-persist/)
 - [Axios](https://github.com/axios/axios)
 - [Jest](https://facebook.github.io/jest/)
 - [Eslint](http://eslint.org/) ([Airbnb config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb))
