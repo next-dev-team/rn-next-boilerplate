@@ -1,8 +1,8 @@
+import { BottomSheetTemplate, ImageTemplate, TailwindTemplate } from '@/components/templates';
+import { getCurrentState } from '@/services';
+import { useHomeStore } from '@/store';
 import { useCreation } from 'ahooks';
 import React from 'react';
-import { BottomSheetTemplate, TailwindTemplate } from '_app/components/templates';
-import { getCurrentState } from '_app/services';
-import { useHomeStore } from '_app/store';
 
 export default function DetailScreen() {
   const { menusScreen, detailScreenTitle } = useHomeStore();
@@ -16,6 +16,7 @@ export default function DetailScreen() {
     const menus = {
       [detailScreenTitle.TailwindCSS]: <TailwindTemplate />,
       [detailScreenTitle.BottomSheet]: <BottomSheetTemplate />,
+      [detailScreenTitle.ProgressiveFastImage]: <ImageTemplate />,
     };
 
     return menus?.[screenTitle] || menus[detailScreenTitle.TailwindCSS];

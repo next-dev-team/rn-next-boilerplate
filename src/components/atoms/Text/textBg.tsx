@@ -1,6 +1,6 @@
+import { useTheme } from '@/store';
 import React, { ReactNode } from 'react';
 import { StyleProp, Text as RnText, TextProps, TextStyle } from 'react-native';
-import { useTheme } from '_app/store';
 
 type ITextBg = {
   children: ReactNode;

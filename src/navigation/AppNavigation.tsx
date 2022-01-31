@@ -1,7 +1,7 @@
+import { DetailOption, DetailScreen, HomeOptions, HomeScreen } from '@/screens';
+import { useTheme } from '@/store';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { DetailOption, DetailScreen, HomeOptions, HomeScreen } from '_app/screens';
-import { useTheme } from '_app/store';
 
 const Stack = createStackNavigator<AppStackParams>();
 

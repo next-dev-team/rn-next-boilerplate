@@ -1,6 +1,6 @@
+import { useTheme } from '@/store';
 import React, { ReactNode } from 'react';
 import FastImage, { FastImageProps } from 'react-native-fast-image';
-import { useTheme } from '_app/store';
 
 type IImage = {
   children?: ReactNode;

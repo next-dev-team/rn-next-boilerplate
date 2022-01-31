@@ -1,6 +1,6 @@
+import { createStatePersist, usePersistStore } from '@/plugins';
 import { BottomSheetMethods } from '@gorhom/bottom-sheet/lib/typescript/types';
 import { useRef } from 'react';
-import { createStatePersist, usePersistStore } from '_app/plugins';
 
 type IInitStore = {};
 

@@ -1,6 +1,6 @@
+import { Box, Button, Image, SvgIcon, Text, TextBg } from '@/components/atoms';
+import { useSettingsStore, useTheme } from '@/store';
 import React from 'react';
-import { Box, Button, Image, SvgIcon, Text, TextBg } from '_app/components/atoms';
-import { useSettingsStore, useTheme } from '_app/store';
 
 export function TailwindTemplate() {
   const { inc, dec, counter } = useSettingsStore();

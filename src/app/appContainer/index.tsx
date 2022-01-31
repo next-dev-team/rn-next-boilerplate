@@ -1,12 +1,12 @@
 // import { useFlipper } from '@react-navigation/devtools';
+import { Box, ContainerRoot } from '@/components/atoms';
+import { AppNavigation } from '@/navigation';
+import { linkingApp, navigationRef } from '@/services';
+import { useSettingsStore } from '@/store';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { delay } from 'lodash';
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
-import { Box, ContainerRoot } from '_app/components/atoms';
-import { AppNavigation } from '_app/navigation';
-import { linkingApp, navigationRef } from '_app/services';
-import { useSettingsStore } from '_app/store';
 import { useApp } from './useApp';
 
 const NavigationRoot = ({ isReady }: { isReady: boolean }) => {

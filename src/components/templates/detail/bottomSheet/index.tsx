@@ -1,7 +1,7 @@
+import { Box, Button, Text } from '@/components/atoms';
+import { BottomSheet } from '@/components/group';
+import { useDisplayStore } from '@/store';
 import React from 'react';
-import { Box, Button, Text } from '_app/components/atoms';
-import { BottomSheet } from '_app/components/group';
-import { useDisplayStore } from '_app/store';
 
 export function BottomSheetTemplate() {
   const { bSheetHomeRef, openBSheetHome, closeBSheetHome } = useDisplayStore();

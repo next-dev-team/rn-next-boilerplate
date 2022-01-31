@@ -1,7 +1,7 @@
+import { Box } from '@/components/atoms';
+import { useTheme } from '@/store';
 import BTSheet, { BottomSheetBackdrop, BottomSheetProps } from '@gorhom/bottom-sheet';
 import React, { ReactNode, Ref, useCallback, useMemo } from 'react';
-import { Box } from '_app/components/atoms';
-import { useTheme } from '_app/store';
 import CustomHandle from './bottomSheetHandler';
 
 export type IBottomSheet = { children: ReactNode; enableBackdrop?: boolean } & Partial<BottomSheetProps>;

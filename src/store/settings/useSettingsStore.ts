@@ -1,6 +1,6 @@
+import i18n, { defaultI18nKey, I18nKey } from '@/i18n';
+import { createStatePersist, usePersistStore } from '@/plugins';
 import { TailwindFn } from 'twrnc';
-import i18n, { defaultI18nKey, I18nKey } from '_app/i18n';
-import { createStatePersist, usePersistStore } from '_app/plugins';
 
 type IInitStore = {
   colorScheme: 'dark' | 'light' | 'system';

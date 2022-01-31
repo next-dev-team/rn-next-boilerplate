@@ -1,3 +1,3 @@
-import { px } from '_app/utils';
+import { px } from '@/utils';
 //for svg generator
 export { px };

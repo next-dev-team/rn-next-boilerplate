@@ -1,8 +1,8 @@
+import { CusText } from '@/components';
 import React from 'react';
 import 'react-native';
 import { render } from 'test/test-utils';
 import { colorsTheme } from 'themes';
-import { CusText } from '_app/components';
 
 describe('<CusText />', () => {
   it('should match snapshot', () => {

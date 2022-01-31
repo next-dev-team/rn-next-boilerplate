@@ -1,5 +1,5 @@
+import { useSettingsStore, useTheme } from '@/store';
 import { useEffect } from 'react';
-import { useSettingsStore, useTheme } from '_app/store';
 
 export const useApp = () => {
   const { colorScheme } = useSettingsStore();

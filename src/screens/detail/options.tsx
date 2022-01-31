@@ -1,8 +1,8 @@
+import { Box, SvgIcon, Text } from '@/components/atoms';
+import { navigate } from '@/services';
+import { useTheme } from '@/store';
 import { StackHeaderProps, StackNavigationOptions } from '@react-navigation/stack';
 import React from 'react';
-import { Box, SvgIcon, Text } from '_app/components/atoms';
-import { navigate } from '_app/services';
-import { useTheme } from '_app/store';
 
 const RenderOption = (props: StackHeaderProps) => {
   const { twColor } = useTheme();
@@ -11,7 +11,7 @@ const RenderOption = (props: StackHeaderProps) => {
   return (
     <>
       {/* ============= tailwind style ========= */}
-      <Box className="px-4 flex-row justify-between items-center ">
+      <Box className="px-4 flex-row justify-between items-center mb-2">
         <Box className="p-1 rounded-full bg-red-400" touchOpacity onPress={() => navigate('KittenList')}>
           <SvgIcon size={26} name="left" color={twColor(`bg-white`)} />
         </Box>

@@ -1,10 +1,10 @@
+import { Text } from '@/components/atoms';
+import { transformOrigin } from '@/utils';
 import { BottomSheetHandleProps } from '@gorhom/bottom-sheet';
 import React, { useMemo } from 'react';
 import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import Animated, { Extrapolate, interpolate, useAnimatedStyle, useDerivedValue } from 'react-native-reanimated';
 import { toRad } from 'react-native-redash';
-import { Text } from '_app/components/atoms';
-import { transformOrigin } from '_app/utils';
 
 interface CustomHandleProps extends BottomSheetHandleProps {
   title: string;

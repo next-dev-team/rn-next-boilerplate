@@ -1,3 +1,3 @@
-import * as allScreen from '_app/screens';
+import * as allScreen from '@/screens';
 
 export const ROUTE = Object.keys(allScreen).filter(i => i.includes('Screen'));

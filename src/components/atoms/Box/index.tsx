@@ -1,3 +1,4 @@
+import { useTheme } from '@/store/useTheme';
 import React, { ReactNode } from 'react';
 import {
   ScrollView,
@@ -8,7 +9,6 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import { useTheme } from '_app/store/useTheme';
 
 type IBoxVariant = 'touchOpacity' | 'view' | 'scroll';
 export type IBox = {

@@ -1,4 +1,4 @@
-import { createStatePersist, usePersistStore } from '_app/plugins';
+import { createStatePersist, usePersistStore } from '@/plugins';
 
 type IInitStore = Partial<{
   menusScreen: IMenus[];
@@ -7,6 +7,7 @@ type IInitStore = Partial<{
 const detailScreenTitle = {
   BottomSheet: 'Bottom Sheet',
   TailwindCSS: 'Tailwind CSS',
+  ProgressiveFastImage: 'Progressive FastImage',
 };
 
 const initStore = {
@@ -16,6 +17,9 @@ const initStore = {
     },
     {
       title: detailScreenTitle.TailwindCSS,
+    },
+    {
+      title: detailScreenTitle.ProgressiveFastImage,
     },
   ],
   detailScreenTitle,

@@ -1,4 +1,4 @@
-import { createStatePersist, usePersistStore } from '_app/plugins';
+import { createStatePersist, usePersistStore } from '@/plugins';
 
 type IInitStore = {};
 

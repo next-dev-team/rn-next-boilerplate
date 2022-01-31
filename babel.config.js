@@ -1,9 +1,7 @@
 module.exports = {
-
   presets: ['module:metro-react-native-babel-preset'],
   env: {
     production: {
-
       plugins: [
         'transform-remove-console',
         [
@@ -22,33 +20,20 @@ module.exports = {
           },
         ],
       ],
-
     },
   },
   plugins: [
-    // ['@babel/plugin-proposal-decorators', { legacy: true }],
     [
       'module-resolver',
       {
         root: ['./'],
         alias: {
-          _app: './src',
+          '@': './src',
           _assets: './assets',
         },
-        extensions: [
-          ".ios.ts",
-          ".android.ts",
-          ".ts",
-          ".ios.tsx",
-          ".android.tsx",
-          ".tsx",
-          ".jsx",
-          ".js",
-          ".json"
-        ],
+        extensions: ['.ios.ts', '.android.ts', '.ts', '.ios.tsx', '.android.tsx', '.tsx', '.jsx', '.js', '.json'],
       },
     ],
     'react-native-reanimated/plugin',
   ],
-
 };

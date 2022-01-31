@@ -1,4 +1,4 @@
-import { fakerData, genMockArr } from '_app/utils/mockData';
+import { fakerData, genMockArr } from '@/utils/mockData';
 
 /**
  * fakerData

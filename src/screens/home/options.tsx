@@ -1,8 +1,8 @@
+import { Box, Image, SvgIcon, Text } from '@/components/atoms';
+import { useSettingsStore, useTheme } from '@/store';
 import { StackNavigationOptions } from '@react-navigation/stack';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Box, Image, SvgIcon, Text } from '_app/components/atoms';
-import { useSettingsStore, useTheme } from '_app/store';
 
 const RenderOption = () => {
   const { colorScheme, setColorScheme, currentLocaleKey, setCurrentLocaleKey } = useSettingsStore();

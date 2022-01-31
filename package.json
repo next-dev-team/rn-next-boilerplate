@@ -38,6 +38,7 @@
     }
   },
   "dependencies": {
+    "@freakycoder/react-native-progressive-fast-image": "^0.2.5",
     "@gorhom/bottom-sheet": "^4.1.5",
     "@gorhom/portal": "^1.0.12",
     "@hookstate/core": "^3.0.13",
@@ -78,10 +79,10 @@
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.16.7",
-    "@babel/preset-env": "^7.16.11",
     "@babel/core": "^7.12.9",
     "@babel/plugin-transform-react-jsx": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
     "@babel/runtime": "^7.12.5",
     "@commitlint/cli": "^13.1.0",
     "@react-native-community/eslint-config": "^2.0.0",

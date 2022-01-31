@@ -1,7 +1,7 @@
+import { useSettingsStore, useTheme } from '@/store';
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useSettingsStore, useTheme } from '_app/store';
 
 export const ContainerRoot = ({ children }: any) => {
   const { darkMode } = useSettingsStore();

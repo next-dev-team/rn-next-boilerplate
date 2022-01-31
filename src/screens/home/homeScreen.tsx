@@ -1,8 +1,8 @@
+import { Button, Layout, Section } from '@/components/atoms';
+import { navigate } from '@/services';
+import { useHomeStore, useTheme } from '@/store';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import { Button, Layout, Section } from '_app/components/atoms';
-import { navigate } from '_app/services';
-import { useHomeStore, useTheme } from '_app/store';
 
 const HomeScreen = () => {
   const { twGradients, tw } = useTheme();
