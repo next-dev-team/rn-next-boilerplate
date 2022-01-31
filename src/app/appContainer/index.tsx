@@ -4,7 +4,8 @@ import { delay } from 'lodash';
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
 import { Box, ContainerRoot } from '_app/components/atoms';
-import { AppNavigation, linkingApp, navigationRef } from '_app/navigation';
+import { AppNavigation } from '_app/navigation';
+import { linkingApp, navigationRef } from '_app/services';
 import { useSettingsStore } from '_app/store';
 import { useApp } from './useApp';
 

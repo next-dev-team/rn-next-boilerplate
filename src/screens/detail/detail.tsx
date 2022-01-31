@@ -1,13 +1,13 @@
 import { useCreation } from 'ahooks';
 import React from 'react';
 import { BottomSheetTemplate, TailwindTemplate } from '_app/components/templates';
-import { getCurrentRoute } from '_app/navigation';
-import { useHomeStore } from '_app/store/home/useHomeStore';
+import { getCurrentState } from '_app/services';
+import { useHomeStore } from '_app/store';
 
 export default function DetailScreen() {
   const { menusScreen, detailScreenTitle } = useHomeStore();
 
-  const RouteState = getCurrentRoute('DetailScreen')?.params?.state;
+  const RouteState = getCurrentState('DetailScreen');
 
   const screenTitle = RouteState?.title || detailScreenTitle.TailwindCSS;
 

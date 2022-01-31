@@ -1,9 +1,8 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { Button, Layout, Section } from '_app/components/atoms';
-import { navigateStack } from '_app/navigation';
-import { useTheme } from '_app/store';
-import { useHomeStore } from '_app/store/home/useHomeStore';
+import { navigate } from '_app/services';
+import { useHomeStore, useTheme } from '_app/store';
 
 const HomeScreen = () => {
   const { twGradients, tw } = useTheme();
@@ -28,7 +27,7 @@ const HomeScreen = () => {
               <Button
                 label={state.title}
                 onPress={() => {
-                  navigateStack('DetailScreen', { state: { ...state, menusScreen } });
+                  navigate('DetailScreen', { state: { ...state, menusScreen } });
                 }}
                 labelCls="uppercase font-bold"
               />

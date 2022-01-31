@@ -1,7 +1,7 @@
 import { StackHeaderProps, StackNavigationOptions } from '@react-navigation/stack';
 import React from 'react';
 import { Box, SvgIcon, Text } from '_app/components/atoms';
-import { navigateStack } from '_app/navigation';
+import { navigate } from '_app/services';
 import { useTheme } from '_app/store';
 
 const RenderOption = (props: StackHeaderProps) => {
@@ -12,7 +12,7 @@ const RenderOption = (props: StackHeaderProps) => {
     <>
       {/* ============= tailwind style ========= */}
       <Box className="px-4 flex-row justify-between items-center ">
-        <Box className="p-1 rounded-full bg-red-400" touchOpacity onPress={() => navigateStack('KittenList')}>
+        <Box className="p-1 rounded-full bg-red-400" touchOpacity onPress={() => navigate('KittenList')}>
           <SvgIcon size={26} name="left" color={twColor(`bg-white`)} />
         </Box>
         {screenTitle && (

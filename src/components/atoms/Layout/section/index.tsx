@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { isValidElement, memo } from 'react';
 import isEqual from 'react-fast-compare';
 import { Box, IBox, Text } from '../..';
@@ -18,7 +19,7 @@ export const Section = memo(
     const isHasTitle = titleLeft || titleCenter || titleRight;
 
     return (
-      <Box className="mx-4 my-6" {...rest}>
+      <Box className={classNames('mx-4 my-6', className)} {...rest}>
         {isHasTitle && (
           <Box className="mb-2 flex-row justify-between">
             {isValidElement(titleLeft) ? (
@@ -45,7 +46,11 @@ export const Section = memo(
           </Box>
         )}
 
-        {children && <Box className={`bg-white dark:bg-dark rounded-lg ${contentCls}`}>{children}</Box>}
+        {children && (
+          <Box className={`bg-white dark:bg-dark rounded-lg ${contentCls}`} {...contentProps}>
+            {children}
+          </Box>
+        )}
       </Box>
     );
   },
