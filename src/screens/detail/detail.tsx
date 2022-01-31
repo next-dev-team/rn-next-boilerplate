@@ -1,4 +1,9 @@
-import { BottomSheetTemplate, ImageTemplate, TailwindTemplate } from '@/components/templates';
+import {
+  BottomSheetTemplate,
+  ImageTemplate,
+  RoundedCheckboxGroupTemplate,
+  TailwindTemplate,
+} from '@/components/templates';
 import { getCurrentState } from '@/services';
 import { useHomeStore } from '@/store';
 import { useCreation } from 'ahooks';
@@ -17,6 +22,7 @@ export default function DetailScreen() {
       [detailScreenTitle.TailwindCSS]: <TailwindTemplate />,
       [detailScreenTitle.BottomSheet]: <BottomSheetTemplate />,
       [detailScreenTitle.ProgressiveFastImage]: <ImageTemplate />,
+      [detailScreenTitle.RoundedCheckboxGroup]: <RoundedCheckboxGroupTemplate />,
     };
 
     return menus?.[screenTitle] || menus[detailScreenTitle.TailwindCSS];

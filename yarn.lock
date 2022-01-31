@@ -1280,6 +1280,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@freakycoder/react-native-bounceable@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@freakycoder/react-native-bounceable/-/react-native-bounceable-0.2.5.tgz#ad61bdafbf68465e9c2145e99c09b500ae091f0e"
+  integrity sha512-J8WBOYxbm/um7SqXYneduZ08T5Kin9z+ixsS3wOLtpeNvKscuqmDEgsgefTYydeSIoI5dOfWmklnRRgu5i/8nA==
+
 "@freakycoder/react-native-progressive-fast-image@^0.2.5":
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@freakycoder/react-native-progressive-fast-image/-/react-native-progressive-fast-image-0.2.5.tgz#8c7f0e3dafc33211cfbcff99bae188bb80ebc251"
@@ -8124,6 +8129,11 @@ react-native-codegen@^0.0.11:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
+react-native-dynamic-vector-icons@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/react-native-dynamic-vector-icons/-/react-native-dynamic-vector-icons-1.1.6.tgz#a032cf647eb6934cbec56562deda772ca073ac67"
+  integrity sha512-tz098Wv/4TI70BRWfshSyVzWsoV4PRdp6fMMA7GRmxsaERfYshEy3Rs3bvD9tVjD+zKUcmM4Ce7bmAoJkGSNdg==
+
 react-native-exception-handler@^2.10.10:
   version "2.10.10"
   resolved "https://registry.yarnpkg.com/react-native-exception-handler/-/react-native-exception-handler-2.10.10.tgz#b6bfe2b7e6ea4a4deb1f518f48ce2ee1d4843497"
@@ -8198,6 +8208,16 @@ react-native-restart@^0.0.23:
   version "0.0.23"
   resolved "https://registry.yarnpkg.com/react-native-restart/-/react-native-restart-0.0.23.tgz#9b53062ebc692f469d0662c06879cb4d34c62520"
   integrity sha512-BTs3YNl0MFyTgYgq6oQOspVV7+8Umm2QeuHWJ8xfRsjdHIUBoKF/Bxe1IMGAO5vHPcNwN+lHE6Mf58Tu4HS9/w==
+
+react-native-rounded-checkbox-group@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-rounded-checkbox-group/-/react-native-rounded-checkbox-group-0.1.1.tgz#7597320ae0bdc9378fd497c031651e50fffe65e9"
+  integrity sha512-koCiiTRAQw5nhHeRligGGPxZ4qT80ZaZxIzFvIWa8E4RFKQLlWMXDYV53QLJlUDFYgPylSXitguQ+7x58hi7mg==
+
+react-native-rounded-checkbox@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/react-native-rounded-checkbox/-/react-native-rounded-checkbox-0.3.3.tgz#05a753180604db61a074b2ef1ae7446347c3df8c"
+  integrity sha512-CR2C21SxPyR1D4HbX+z3/fn0Bf1AqTrn4bN+fR4wZ+c9/GHgBBz8whLsckz+7kxHqjFqGXwyFiuB7CQapO4TnQ==
 
 react-native-safe-area-context@^3.3.2:
   version "3.3.2"

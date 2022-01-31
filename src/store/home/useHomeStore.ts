@@ -8,6 +8,7 @@ const detailScreenTitle = {
   BottomSheet: 'Bottom Sheet',
   TailwindCSS: 'Tailwind CSS',
   ProgressiveFastImage: 'Progressive FastImage',
+  RoundedCheckboxGroup: 'Rounded CheckboxGroup',
 };
 
 const initStore = {
@@ -20,6 +21,9 @@ const initStore = {
     },
     {
       title: detailScreenTitle.ProgressiveFastImage,
+    },
+    {
+      title: detailScreenTitle.RoundedCheckboxGroup,
     },
   ],
   detailScreenTitle,

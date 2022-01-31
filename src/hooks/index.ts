@@ -5,3 +5,4 @@ export * from './useDelay';
 export * from './useMock';
 export * from './useNav';
 export * from './useNetwork';
+export * from './useStateWithCallback';
