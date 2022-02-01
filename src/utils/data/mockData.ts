@@ -1,12 +1,3 @@
-import faker from 'faker';
-
-export const fakerData = (isDebug?: boolean) => {
-  if (isDebug) {
-    console.log('mock Arr', faker);
-  }
-  return faker;
-};
-
 export function genMockArr<T>({
   data,
   isDebug,

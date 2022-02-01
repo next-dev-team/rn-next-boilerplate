@@ -1,6 +1,7 @@
 import {
   BottomSheetTemplate,
   ImageTemplate,
+  RecyclerFlatListTemplate,
   RoundedCheckboxGroupTemplate,
   TailwindTemplate,
 } from '@/components/templates';
@@ -23,6 +24,7 @@ export default function DetailScreen() {
       [detailScreenTitle.BottomSheet]: <BottomSheetTemplate />,
       [detailScreenTitle.ProgressiveFastImage]: <ImageTemplate />,
       [detailScreenTitle.RoundedCheckboxGroup]: <RoundedCheckboxGroupTemplate />,
+      [detailScreenTitle.RecyclerFlatList]: <RecyclerFlatListTemplate />,
     };
 
     return menus?.[screenTitle] || menus[detailScreenTitle.TailwindCSS];

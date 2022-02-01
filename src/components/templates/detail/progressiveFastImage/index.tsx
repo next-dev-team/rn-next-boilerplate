@@ -3,7 +3,7 @@ import React from 'react';
 import { Dimensions, FlatList, StatusBar } from 'react-native';
 const { width: ScreenWidth } = Dimensions.get('window');
 
-const images = [
+export const images = [
   {
     uri: 'https://images.unsplash.com/photo-1544627836-e63eb27c6e09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjQzMzEwfQ&auto=format&fit=crop&w=2100&q=80',
   },

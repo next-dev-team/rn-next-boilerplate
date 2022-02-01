@@ -9,6 +9,7 @@ const detailScreenTitle = {
   TailwindCSS: 'Tailwind CSS',
   ProgressiveFastImage: 'Progressive FastImage',
   RoundedCheckboxGroup: 'Rounded CheckboxGroup',
+  RecyclerFlatList: 'Recycler FlatList',
 };
 
 const initStore = {
@@ -24,6 +25,9 @@ const initStore = {
     },
     {
       title: detailScreenTitle.RoundedCheckboxGroup,
+    },
+    {
+      title: detailScreenTitle.RecyclerFlatList,
     },
   ],
   detailScreenTitle,
