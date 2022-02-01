@@ -1,5 +1,5 @@
 export { Box, IBox } from './box';
-export { default as Button } from './Button';
+export { default as Button } from './button';
 export { default as Image } from './image/Image';
 export { ContainerRoot, ISection, Layout, Section } from './layout';
 export { default as SvgIcon, IconNames, SvgIconProps } from './svg-icon';
