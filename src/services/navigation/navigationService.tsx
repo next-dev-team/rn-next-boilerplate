@@ -1,5 +1,4 @@
-import { NavigationContainerRef, RouteProp, StackActions } from '@react-navigation/native';
-import * as React from 'react';
+import { CommonActions, createNavigationContainerRef, RouteProp, StackActions } from '@react-navigation/native';
 
 export type IAppStackParamKey = keyof AppStackParams;
 export type IRouteParam<T extends IAppStackParamKey> = RouteProp<AppStackParams, T>['params'];
@@ -7,35 +6,52 @@ export type IRouteName<T extends IAppStackParamKey> = RouteProp<AppStackParams, 
 export type IRoutePath<T extends IAppStackParamKey> = RouteProp<AppStackParams, T>['path'];
 export type IRouteKey<T extends IAppStackParamKey> = RouteProp<AppStackParams, T>['key'];
 
-export const navigationRef = React.createRef<NavigationContainerRef<AppStackParams>>();
+export const navigationRef = createNavigationContainerRef<AppStackParams>();
 
 export function navigate<T extends IAppStackParamKey>(name: IRouteName<T>, param?: IRouteParam<T>) {
-  navigationRef.current?.navigate(name, param as any);
+  navigationRef?.navigate(name, param as any);
+}
+
+export function navigateAndFirstReset<T extends IAppStackParamKey>(name: IRouteName<T>, index = 0) {
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(
+      CommonActions.reset({
+        index,
+        routes: [{ name }],
+      })
+    );
+  }
 }
 
 export function navigateReplace<T extends IAppStackParamKey>(
   name: RouteProp<AppStackParams, T>['name'],
   param?: IRouteParam<T>
 ) {
-  navigationRef.current?.dispatch(StackActions.replace(name, param));
+  if (navigationRef.isReady()) {
+    navigationRef?.dispatch(StackActions.replace(name, param));
+  }
 }
 
 export const isCanGoBack = () => {
-  return navigationRef.current?.canGoBack();
+  return navigationRef.isReady() && navigationRef?.canGoBack();
 };
 
 export function goBack() {
   if (isCanGoBack()) {
-    navigationRef.current?.goBack();
+    navigationRef?.goBack();
   }
 }
 
 export const popToTop = () => {
-  navigationRef.current?.dispatch(StackActions.popToTop());
+  if (navigationRef.isReady()) {
+    navigationRef?.dispatch(StackActions.popToTop());
+  }
 };
 
 export const navigateReset = (params: any) => {
-  navigationRef.current?.reset(params);
+  if (navigationRef.isReady()) {
+    navigationRef?.reset(params);
+  }
 };
 
 export function getCurrentRoute<T extends IAppStackParamKey>(
@@ -44,12 +60,15 @@ export function getCurrentRoute<T extends IAppStackParamKey>(
   path?: IRoutePath<T>,
   key?: IRouteKey<T>
 ) {
-  return navigationRef.current?.getCurrentRoute() as unknown as {
-    name: typeof name;
-    params: typeof params;
-    path: typeof path;
-    key: typeof key;
-  };
+  if (navigationRef.isReady()) {
+    return navigationRef?.getCurrentRoute() as unknown as {
+      name: typeof name;
+      params: typeof params;
+      path: typeof path;
+      key: typeof key;
+    };
+  }
+  return false as unknown as undefined;
 }
 
 export const getCurrentState = (name: IAppStackParamKey) => {
