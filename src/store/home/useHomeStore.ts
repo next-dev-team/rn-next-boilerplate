@@ -10,6 +10,7 @@ const detailScreenTitle = {
   ProgressiveFastImage: 'Progressive FastImage',
   RoundedCheckboxGroup: 'Rounded CheckboxGroup',
   RecyclerFlatList: 'Recycler FlatList',
+  ModalTemplate: 'Modal Sheet',
 };
 
 const initStore = {
@@ -22,6 +23,9 @@ const initStore = {
     },
     {
       title: detailScreenTitle.ProgressiveFastImage,
+    },
+    {
+      title: detailScreenTitle.ModalTemplate,
     },
     {
       title: detailScreenTitle.RoundedCheckboxGroup,
