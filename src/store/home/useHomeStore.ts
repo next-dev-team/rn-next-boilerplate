@@ -11,6 +11,7 @@ const detailScreenTitle = {
   RoundedCheckboxGroup: 'Rounded CheckboxGroup',
   RecyclerFlatList: 'Recycler FlatList',
   ModalTemplate: 'Modal Sheet',
+  requestAxios: 'Request1',
 };
 
 const initStore = {
@@ -32,6 +33,9 @@ const initStore = {
     },
     {
       title: detailScreenTitle.RecyclerFlatList,
+    },
+    {
+      title: detailScreenTitle.requestAxios,
     },
   ],
   detailScreenTitle,

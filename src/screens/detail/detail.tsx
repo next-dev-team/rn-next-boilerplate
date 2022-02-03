@@ -3,6 +3,7 @@ import {
   ImageTemplate,
   ModalTemplate,
   RecyclerFlatListTemplate,
+  RequestTemplate,
   RoundedCheckboxGroupTemplate,
   TailwindTemplate,
 } from '@/components/templates';
@@ -23,6 +24,7 @@ export default function DetailScreen() {
     const menus = {
       [detailScreenTitle.TailwindCSS]: <TailwindTemplate />,
       [detailScreenTitle.BottomSheet]: <BottomSheetTemplate />,
+      [detailScreenTitle.requestAxios]: <RequestTemplate />,
       [detailScreenTitle.ProgressiveFastImage]: <ImageTemplate />,
       [detailScreenTitle.RoundedCheckboxGroup]: <RoundedCheckboxGroupTemplate />,
       [detailScreenTitle.RecyclerFlatList]: <RecyclerFlatListTemplate />,

@@ -1,4 +1,9 @@
-import equals from 'react-fast-compare';
+/**
+ * credit
+ * https://github.com/thundersdata-frontend/rn-template/blob/main/src/utils/string.ts
+ */
+
+import produce from 'immer';
 
 export const convertToHttps = (url: string | undefined) => url?.replace(/^http:/, 'https:');
 
@@ -37,10 +42,6 @@ export const replaceAll = (source = '', textReplace = '', textInstead = '') => {
 
 export const removeHtmlTag = (source = '') => {
   return source.replace(/<\/?[^>]+(>|$)/g, '');
-};
-
-export const compareValue = (val1: any, val2: any) => {
-  return equals(val1, val2);
 };
 
 export const removeChar = (source = '') => {
@@ -137,3 +138,59 @@ export const randomUniqueId = () => {
     return v.toString(16);
   });
 };
+
+/**
+ * Used to automatically intercept and add characters whose length exceeds the specified number...
+ */
+export const textEllipsis = (text: string, length: number) => {
+  if (text.length > length && length > 0) {
+    return `${text.substring(0, length)}...`;
+  }
+  return text;
+};
+
+export function convertNullToEmptyString<T>(obj: T) {
+  return produce(obj, draft => {
+    Object.entries(draft).forEach(([key, val]) => {
+      if (val === null || val === undefined) {
+        draft[key] = '';
+      }
+    });
+  });
+}
+
+/**
+ * format numbers
+ * @param value
+ * @param dots decimal places
+ */
+export const formatNumber = (value?: number | string, dots = 4) => {
+  if (value) {
+    if (typeof value === 'string' && !Number.isNaN(+value)) {
+      return Number(value).toFixed(dots);
+    } else if (typeof value === 'number') {
+      return Number(value).toFixed(dots);
+    }
+  }
+  return '0';
+};
+
+/**
+ * Get the last string after the specified delimiter point
+ * @param (sourceStr splitStr) source string trim character node
+ * @returns {string} The string after the last trim character
+ */
+export const getLastSubstring = (sourceStr = '', splitStr = ''): string => {
+  return sourceStr.substring(sourceStr.lastIndexOf(splitStr) + splitStr.length, sourceStr.length);
+};
+
+/**
+ * value formatted as string
+ * @param value
+ */
+export function valueToString(value: any | any[]) {
+  if (typeof value === 'string') {
+    return value;
+  }
+  return JSON.stringify(value);
+}

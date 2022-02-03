@@ -39,7 +39,7 @@ export const Box = ({
   );
 
   const scrollViewBox = (
-    <ScrollView style={[twStyle(className), style]} {...rest}>
+    <ScrollView showsVerticalScrollIndicator={false} style={[twStyle(className), style]} {...rest}>
       {children}
     </ScrollView>
   );

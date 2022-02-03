@@ -1,9 +1,7 @@
 import { apiUrl } from '@/constants/http';
 import axios from 'axios';
 
-// };
-
-const instance = axios.create({
+const axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
@@ -11,9 +9,8 @@ const instance = axios.create({
   method: 'GET',
 });
 
-instance.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   function (config) {
-    // eslint-disable-next-line no-param-reassign
     config.headers = {
       ...config.headers,
       Authorization: `Bearer ${apiUrl.token}`,
@@ -28,7 +25,7 @@ instance.interceptors.request.use(
 );
 
 // Add a response interceptor
-instance.interceptors.response.use(
+axiosInstance.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
@@ -46,4 +43,4 @@ instance.interceptors.response.use(
   }
 );
 
-export { instance as request };
+export { axiosInstance };

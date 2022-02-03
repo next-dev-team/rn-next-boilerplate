@@ -1,4 +1,14 @@
 import { createStatePersist, usePersistStore } from '@/plugins';
+import { requestAxios } from '@/utils';
+import { useCreation, useRequest } from 'ahooks';
+
+interface RootObject {
+  id: number;
+  name: string;
+  email: string;
+  gender: string;
+  status: string;
+}
 
 type IInitStore = {};
 
@@ -17,6 +27,23 @@ export function useExampleStore() {
     store,
     whitelist: [],
   });
+  const {
+    data: userData,
+    runAsync: getUserData,
+    loading: loadingGetUser,
+  } = useRequest(
+    async () => {
+      return await requestAxios<RootObject[]>('/users');
+    },
+    {
+      manual: true,
+      loadingDelay: 100,
+    }
+  );
 
-  return {} as const;
+  return {
+    userData: useCreation(() => userData?.data, [userData]),
+    loadingGetUser: useCreation(() => loadingGetUser && !userData?.data, [loadingGetUser, userData]),
+    getUserData,
+  } as const;
 }
