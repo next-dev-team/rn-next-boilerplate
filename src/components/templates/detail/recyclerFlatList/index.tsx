@@ -6,12 +6,13 @@ import React from 'react';
 
 export function RecyclerFlatListTemplate() {
   const { tw } = useTheme();
+  
   return (
     <RecyclerFlatList
       itemHeight={260}
       gap={10}
       numColumns={2}
-      data={getRandomData(2000)}
+      data={getRandomData(200)}
       keyExtractor={i => String(i)}
       renderItem={({ item, index }) => {
         return (
